@@ -1,0 +1,1577 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>แคปชั่นวิดีโอ SEO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600&family=Bai+Jamjuree:wght@500;600;700&display=swap">
+<style>
+/* Layout: แถบบนบาง + 2 คอลัมน์ (ขั้นตอนเลือกซ้าย | แคปชั่นขวาเกาะจอ) · มือถือเรียงลงมา มีแถบคัดลอกติดล่างจอ */
+:root{
+  --bg:#f9fafc; --card:#ffffff; --field:#ffffff;
+  --ink:#1e293b; --muted:#5c6478; --faint:#8b92a3;
+  --line:rgb(26 32 50 / .10); --line-2:rgb(26 32 50 / .17); --soft:rgb(26 32 50 / .045);
+  --accent:#475569; --ring:rgb(71 85 105 / .22);
+  --btn:#1e293b; --btn-fg:#ffffff;
+  --ok:#0f766e; --ok-bg:rgb(16 185 129 / .07); --ok-bd:rgb(16 185 129 / .38);
+  --warn:#92660b; --warn-bg:rgb(234 179 8 / .08); --warn-bd:rgb(234 179 8 / .42);
+  --bad:#b3261e; --bad-bg:rgb(220 38 38 / .07); --bad-bd:rgb(220 38 38 / .38);
+  --info:#1e5fa8; --info-bg:rgb(59 130 246 / .07); --info-bd:rgb(59 130 246 / .38);
+  --hl:rgb(234 179 8 / .28);
+  --sh-sm:0 1px 2px rgb(26 32 50 / .05),0 1px 1px rgb(26 32 50 / .03);
+  --sh-md:0 4px 14px -4px rgb(26 32 50 / .10),0 2px 6px -2px rgb(26 32 50 / .06);
+  --f-body:"Anuphan",system-ui,-apple-system,"Sukhumvit Set","Thonburi","Leelawadee UI",sans-serif;
+  --f-disp:"Bai Jamjuree","Anuphan",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e131b; --card:#161c26; --field:#10151e;
+    --ink:#e5e8ee; --muted:#a2aabb; --faint:#78829a;
+    --line:rgb(229 232 238 / .09); --line-2:rgb(229 232 238 / .17); --soft:rgb(229 232 238 / .05);
+    --accent:#94a3b8; --ring:rgb(148 163 184 / .3);
+    --btn:#e5e8ee; --btn-fg:#0e131b;
+    --ok:#5eead4; --ok-bg:rgb(45 212 191 / .10); --ok-bd:rgb(45 212 191 / .35);
+    --warn:#facc15; --warn-bg:rgb(250 204 21 / .09); --warn-bd:rgb(250 204 21 / .35);
+    --bad:#fca5a5; --bad-bg:rgb(248 113 113 / .10); --bad-bd:rgb(248 113 113 / .38);
+    --info:#93c5fd; --info-bg:rgb(96 165 250 / .10); --info-bd:rgb(96 165 250 / .38);
+    --hl:rgb(250 204 21 / .22);
+    --sh-sm:0 1px 2px rgb(0 0 0 / .3); --sh-md:0 6px 18px -6px rgb(0 0 0 / .5);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e131b; --card:#161c26; --field:#10151e;
+  --ink:#e5e8ee; --muted:#a2aabb; --faint:#78829a;
+  --line:rgb(229 232 238 / .09); --line-2:rgb(229 232 238 / .17); --soft:rgb(229 232 238 / .05);
+  --accent:#94a3b8; --ring:rgb(148 163 184 / .3);
+  --btn:#e5e8ee; --btn-fg:#0e131b;
+  --ok:#5eead4; --ok-bg:rgb(45 212 191 / .10); --ok-bd:rgb(45 212 191 / .35);
+  --warn:#facc15; --warn-bg:rgb(250 204 21 / .09); --warn-bd:rgb(250 204 21 / .35);
+  --bad:#fca5a5; --bad-bg:rgb(248 113 113 / .10); --bad-bd:rgb(248 113 113 / .38);
+  --info:#93c5fd; --info-bg:rgb(96 165 250 / .10); --info-bd:rgb(96 165 250 / .38);
+  --hl:rgb(250 204 21 / .22);
+  --sh-sm:0 1px 2px rgb(0 0 0 / .3); --sh-md:0 6px 18px -6px rgb(0 0 0 / .5);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;font-family:var(--f-body);font-size:14.5px;line-height:1.6;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}
+h1,h2,h3,p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:12px;padding:0 20px;height:60px;background:var(--card);background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.mark{width:36px;height:36px;border:1.5px solid var(--ink);border-radius:10px;display:grid;place-items:center;flex:none}
+.mark svg{width:19px;height:19px}
+.brand h1{font-family:var(--f-disp);font-weight:600;font-size:16.5px;line-height:1.2;letter-spacing:-.01em}
+.brand p{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand > div{min-width:0}
+
+/* layout */
+.wrap{max-width:1360px;margin:0 auto;padding-inline:20px;padding-block:20px 40px;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:20px;align-items:start}
+.col{display:flex;flex-direction:column;gap:14px;min-width:0}
+.out{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);max-height:calc(100vh - 92px);overflow-y:auto;overscroll-behavior:contain;padding:2px 4px 6px 2px;margin:-2px -4px -6px -2px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-sm);padding:16px 18px}
+.card-h{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.card-h > div{min-width:0}
+.card h2{font-family:var(--f-disp);font-size:15.5px;font-weight:600;letter-spacing:-.005em;text-wrap:balance;display:flex;align-items:center;gap:9px}
+.step{width:22px;height:22px;border-radius:50%;background:var(--btn);color:var(--btn-fg);display:inline-grid;place-items:center;font-size:12px;font-weight:700;flex:none;font-family:var(--f-disp)}
+.sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+/* form */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.grid2 > div{min-width:0}
+label.f{display:block;font-size:12.5px;color:var(--muted);margin:13px 0 5px;font-weight:500}
+input[type=text],input[type=search],textarea,select{width:100%;border:1px solid var(--line-2);border-radius:10px;padding:9px 12px;font-size:14px;background:var(--field);color:var(--ink)}
+textarea{resize:vertical;min-height:70px;line-height:1.55}
+select{cursor:pointer}
+input::placeholder,textarea::placeholder{color:var(--faint)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--ring)}
+button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.help{font-size:11.5px;color:var(--faint);margin-top:4px;line-height:1.45}
+.chk{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink);margin-top:9px;cursor:pointer}
+.chk input{width:16px;height:16px;accent-color:var(--btn);margin:0;flex:none}
+
+/* product picker */
+.picker{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.psum{margin-top:12px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--soft);display:flex;flex-direction:column;gap:6px}
+.psum-h{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.psum-h b{font-size:14.5px;font-weight:600;line-height:1.4;min-width:0}
+.psum-m{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--muted)}
+.psum-m b{color:var(--ink);font-weight:600}
+
+/* clip type chips */
+.chipset{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:8px;margin-top:12px}
+.chipset button{border:1px solid var(--line-2);background:var(--field);border-radius:11px;padding:9px 12px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:1px;transition:border-color .12s,background .12s}
+.chipset button b{font-size:13.5px;font-weight:600}
+.chipset button small{font-size:11.5px;color:var(--faint);line-height:1.35}
+.chipset button:hover{border-color:var(--accent)}
+.chipset button.on{background:var(--btn);border-color:var(--btn);color:var(--btn-fg)}
+.chipset button.on small{color:var(--btn-fg);opacity:.75}
+
+/* collapsible cards */
+details.card > summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px}
+details.card > summary::-webkit-details-marker{display:none}
+details.card > summary::after{content:"+";font-size:18px;color:var(--muted);font-weight:500;line-height:1;flex:none}
+details.card[open] > summary::after{content:"−"}
+details.card > summary h2{font-size:15px}
+details.card > summary .sub{margin-top:1px}
+details.inline{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+details.inline > summary{cursor:pointer;font-size:13px;font-weight:500;color:var(--muted);list-style:none}
+details.inline > summary::-webkit-details-marker{display:none}
+details.inline > summary::before{content:"+ "}
+details.inline[open] > summary::before{content:"− "}
+
+/* segmented + tabs */
+.seg{display:flex;gap:4px;background:var(--soft);padding:4px;border-radius:11px;flex-wrap:wrap}
+.seg button{flex:1;border:0;background:transparent;padding:7px 10px;border-radius:8px;font-size:13.5px;color:var(--muted);cursor:pointer;white-space:nowrap;transition:background .12s,color .12s}
+.seg button:hover{color:var(--ink)}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:var(--sh-sm);font-weight:600}
+.opt-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:center;margin-top:10px}
+.opt-row > span{font-size:12.5px;color:var(--muted);font-weight:500}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line-2);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:10px;font-size:13.5px;font-weight:500;cursor:pointer;box-shadow:var(--sh-sm);white-space:nowrap;transition:border-color .15s,background .15s}
+.btn:hover{border-color:var(--accent)}
+.btn svg{width:15px;height:15px;flex:none}
+.btn.sm{padding:5px 10px;font-size:12.5px;border-radius:8px;gap:5px}
+.btn.sm svg{width:13px;height:13px}
+.btn.pri{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}
+.btn.pri:hover{background:var(--accent);border-color:var(--accent)}
+.btn.done{border-color:var(--ok-bd);color:var(--ok);background:var(--ok-bg)}
+.btn.pri.done{background:var(--ok);border-color:var(--ok);color:var(--btn-fg)}
+.btn.danger{border-color:var(--bad-bd);color:var(--bad);background:var(--bad-bg)}
+.btn:disabled{opacity:.5;cursor:default}
+.icon-x{width:28px;height:28px;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--faint);cursor:pointer;display:grid;place-items:center}
+.icon-x:hover{color:var(--bad);border-color:var(--bad-bd);background:var(--bad-bg)}
+.icon-x svg{width:14px;height:14px}
+
+/* FAQ editor */
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.faq{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--soft);display:flex;flex-direction:column;gap:7px}
+.faq-h{display:flex;align-items:center;justify-content:space-between}
+.faq-n{font-size:12px;font-weight:600;color:var(--muted)}
+.faq textarea{min-height:52px}
+.sec-label{font-size:12.5px;color:var(--muted);font-weight:600;margin-top:16px}
+
+/* pills */
+.zone{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:2px 9px;border-radius:9999px;border:1px solid;white-space:nowrap;line-height:1.5}
+.zone.ok{color:var(--ok);border-color:var(--ok-bd);background:var(--ok-bg)}
+.zone.warn{color:var(--warn);border-color:var(--warn-bd);background:var(--warn-bg)}
+.zone.bad{color:var(--bad);border-color:var(--bad-bd);background:var(--bad-bg)}
+.zone.info{color:var(--info);border-color:var(--info-bd);background:var(--info-bg)}
+.zone.gray{color:var(--muted);border-color:var(--line-2);background:var(--card)}
+
+/* caption output */
+.tabs{margin-top:12px}
+.tab-desc{font-size:12.5px;color:var(--muted);margin-top:8px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;border-radius:10px;padding:8px 8px 8px 12px;margin-top:10px;border:1px solid}
+.bar.edit{color:var(--warn);background:var(--warn-bg);border-color:var(--warn-bd)}
+.bar.ai{color:var(--info);background:var(--info-bg);border-color:var(--info-bd)}
+.bar span{min-width:0}
+.ai-note{font-size:12.5px;margin-top:10px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.ai-note.err{color:var(--bad)}
+.spin{width:13px;height:13px;border:2px solid var(--line-2);border-top-color:var(--ink);border-radius:50%;animation:sp .8s linear infinite;flex:none}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation-duration:2.4s}}
+
+.lbl{display:block;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--muted);margin:14px 0 6px}
+.fb{border:1px solid var(--line);border-radius:12px;background:var(--field);padding:12px 14px}
+.fb-h{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.fb-av{width:34px;height:34px;border-radius:50%;background:var(--btn);color:var(--btn-fg);display:grid;place-items:center;font-family:var(--f-disp);font-weight:600;font-size:14px;flex:none}
+.fb-h b{display:block;font-size:13.5px;line-height:1.25}
+.fb-h small{display:block;font-size:11.5px;color:var(--faint)}
+.fb-t{font-size:14px;line-height:1.5;white-space:pre-line;overflow-wrap:anywhere}
+.fb-t mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
+.fb-more{color:var(--muted);font-weight:600}
+.fb-v{margin-top:10px;height:56px;border-radius:9px;background:var(--soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:8px;color:var(--faint);font-size:12px}
+.fb-v svg{width:22px;height:22px}
+.cap{min-height:340px;font-size:14px;line-height:1.6}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:10px}
+.meta .counts{font-size:12.5px;color:var(--muted)}
+
+/* list outputs */
+.olist{display:flex;flex-direction:column;margin-top:10px;border:1px solid var(--line);border-radius:11px;overflow:hidden}
+.oitem{display:flex;align-items:center;gap:10px;padding:9px 10px 9px 13px;border-top:1px solid var(--line)}
+.oitem:first-child{border-top:0}
+.oitem p{flex:1;min-width:0;font-size:13.5px;overflow-wrap:anywhere}
+.oitem .len{font-size:11.5px;color:var(--faint);white-space:nowrap}
+.pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13.5px;line-height:1.55;background:var(--field);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-top:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{font-size:12.5px;border:1px solid var(--line-2);border-radius:9999px;padding:3px 10px;background:var(--field);overflow-wrap:anywhere}
+.split{display:grid;grid-template-columns:1fr;gap:14px}
+.sec-t{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.sec-t h3{font-size:13px;font-weight:600}
+.empty{font-size:13px;color:var(--faint);padding:14px;text-align:center;border:1px dashed var(--line-2);border-radius:11px;margin-top:10px}
+
+/* checklist */
+.score{font-family:var(--f-disp);font-weight:600;font-size:22px;line-height:1}
+.score small{font-family:var(--f-body);font-size:12px;color:var(--muted);font-weight:500;margin-left:4px}
+.checks{display:flex;flex-direction:column;margin-top:10px}
+.ck{display:grid;grid-template-columns:72px minmax(0,1fr);gap:10px;align-items:start;padding:9px 0;border-top:1px solid var(--line)}
+.ck:first-child{border-top:0}
+.ck .zone{justify-self:start;margin-top:2px}
+.ck b{font-size:13.5px;font-weight:500;display:block}
+.ck span{font-size:12px;color:var(--muted);display:block;line-height:1.45}
+.tips ol{margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:7px;font-size:13.5px}
+.tips li::marker{color:var(--faint)}
+.tips li span{color:var(--muted)}
+
+/* toast + mobile bar */
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(12px);background:var(--btn);color:var(--btn-fg);font-size:14px;padding:10px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:.22s;z-index:90;box-shadow:0 10px 30px rgb(0 0 0 / .22);max-width:calc(100vw - 32px);text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line);box-shadow:0 -6px 18px -10px rgb(0 0 0 / .25)}
+.mbar .btn{flex:1;padding:11px 14px}
+
+@media (max-width:980px){
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .out{position:static;max-height:none;overflow:visible;margin:0;padding:0}
+  .mbar{display:flex}
+  body{padding-bottom:76px}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:560px){
+  .top{padding:0 16px}
+  .brand p{display:none}
+  .wrap{padding-inline:16px;padding-block:16px 32px}
+  .grid2{grid-template-columns:minmax(0,1fr)}
+  .card{padding:14px}
+  .opt-row{grid-template-columns:minmax(0,1fr);gap:5px}
+  .seg button{padding:7px 8px;font-size:13px}
+  .chipset{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cap{min-height:300px}
+}
+/* ---- ส่วนของเวอร์ชันออนไลน์ ---- */
+.auth{min-height:100vh;display:grid;place-items:center;padding:24px 16px;background:var(--bg)}
+.auth-card{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh-md);padding:28px}
+.auth-card .brand{margin-bottom:14px}
+.auth-card p{font-size:13.5px;color:var(--muted)}
+input[type=email],input[type=password]{width:100%;border:1px solid var(--line-2);border-radius:10px;padding:9px 12px;font-size:14px;background:var(--field);color:var(--ink)}
+input[type=email]:focus,input[type=password]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--ring)}
+.btn.wide{width:100%;margin-top:18px;padding:11px 16px}
+.err{color:var(--bad);font-size:13px;margin-top:12px;min-height:18px}
+.top .sp{margin-left:auto}
+.who{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.psum-u{font-size:11.5px;color:var(--faint)}
+.save-state{font-weight:500}
+.save-state.pending,.save-state.saving{color:var(--warn)}
+.save-state.saved{color:var(--ok)}
+.save-state.error{color:var(--bad)}
+.uplist{display:flex;flex-direction:column;gap:10px;margin-top:12px;max-height:560px;overflow:auto;padding-right:2px}
+.up-row{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--soft)}
+.up-row.off{opacity:.55}
+.up-row > input{width:16px;height:16px;margin-top:3px;accent-color:var(--btn);cursor:pointer}
+.up-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.up-top b{font-size:13.5px;font-weight:600;min-width:0;overflow-wrap:anywhere}
+.up-row label.f{margin-top:8px}
+@media (max-width:560px){.who{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ยังไม่ได้ตั้งค่า -->
+<div class="auth" id="setupView" hidden>
+  <div class="auth-card">
+    <h2 style="font-family:var(--f-disp);font-size:17px;margin-bottom:8px">ยังไม่ได้เชื่อม Supabase</h2>
+    <p id="setupMsg">เปิดไฟล์ config.js ใส่ Project URL และ API key ของ Supabase แล้วอัปไฟล์ขึ้น GitHub อีกครั้ง</p>
+  </div>
+</div>
+
+<!-- เข้าสู่ระบบ -->
+<div class="auth" id="loginView" hidden>
+  <form class="auth-card" id="loginForm" novalidate>
+    <div class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M10 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></span>
+      <div><h1>แคปชั่นวิดีโอ SEO</h1><p>สำหรับทีมงาน</p></div>
+    </div>
+    <p>เข้าสู่ระบบด้วยอีเมลและรหัสผ่านที่แอดมินสร้างให้</p>
+    <label class="f" for="lgEmail">อีเมล</label>
+    <input type="email" id="lgEmail" autocomplete="username" required>
+    <label class="f" for="lgPass">รหัสผ่าน</label>
+    <input type="password" id="lgPass" autocomplete="current-password" required>
+    <button type="submit" class="btn pri wide" id="lgBtn">เข้าสู่ระบบ</button>
+    <p class="err" id="lgErr" aria-live="polite"></p>
+  </form>
+</div>
+
+<!-- แอป -->
+<div id="appView" hidden>
+<header class="top">
+  <div class="brand">
+    <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M10 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></span>
+    <div>
+      <h1>แคปชั่นวิดีโอ SEO</h1>
+      <p>เลือกสินค้า เลือกแบบคลิป แล้วคัดลอกแคปชั่นไปโพสต์ Facebook ได้เลย</p>
+    </div>
+  </div>
+  <div class="sp"></div>
+  <span class="who" id="whoami"></span>
+  <button type="button" class="btn sm" id="logoutBtn">ออกจากระบบ</button>
+</header>
+
+<main class="wrap">
+  <section class="col" aria-label="เลือกสินค้าและแบบคลิป">
+    <!-- 1 เลือกสินค้า -->
+    <div class="card">
+      <div class="card-h">
+        <h2><span class="step">1</span>เลือกสินค้า</h2>
+        <div class="row">
+          <button type="button" class="btn sm" id="refreshBtn" aria-label="โหลดรายการสินค้าล่าสุด"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.6-6.4L21 8"/><path d="M21 3v5h-5"/></svg>รีเฟรช</button>
+          <button type="button" class="btn sm" id="upBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>อัปไฟล์สินค้า</button>
+          <input type="file" id="upFile" accept=".xlsx,.xls,.json" hidden>
+        </div>
+      </div>
+      <div class="picker">
+        <input type="search" id="pSearch" placeholder="พิมพ์ค้นหา เช่น ที่ชาร์จ, M2, เตาแก๊ส" autocomplete="off" aria-label="ค้นหาสินค้า">
+        <select id="pSelect" aria-label="สินค้า"><option>กำลังโหลดสินค้า…</option></select>
+      </div>
+      <p class="empty" id="noProducts" hidden>ยังไม่มีสินค้าในระบบ กด "อัปไฟล์สินค้า" แล้วเลือกไฟล์ Excel (Framework Product) หรือไฟล์สินค้าเริ่มต้น (.json)</p>
+      <div class="psum" id="psum" hidden>
+        <div class="psum-h"><b id="psName"></b><span class="zone gray" id="psGroup"></span></div>
+        <div class="psum-m"><span>ราคา <b id="psPrice" class="num"></b></span><span id="psWarranty"></span></div>
+        <p class="psum-u" id="psUpd"></p>
+        <div class="row" style="margin-top:4px">
+          <button type="button" class="btn sm" id="editBtn">แก้ไขข้อมูลสินค้านี้</button>
+          <button type="button" class="btn sm" id="newBtn" style="margin-left:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>เพิ่มสินค้าใหม่</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ตรวจไฟล์ที่อัป -->
+    <div class="card" id="upCard" hidden>
+      <h2>ตรวจสินค้าจากไฟล์ก่อนบันทึก</h2>
+      <p class="sub" id="upSub"></p>
+      <div class="uplist" id="upList"></div>
+      <div class="row" style="margin-top:12px;justify-content:flex-end">
+        <button type="button" class="btn sm" id="upCancel">ยกเลิก</button>
+        <button type="button" class="btn pri" id="upSave">บันทึก</button>
+      </div>
+    </div>
+
+    <!-- 2 แบบคลิป -->
+    <div class="card">
+      <h2><span class="step">2</span>คลิปนี้เป็นแบบไหน</h2>
+      <div class="chipset" id="vtypes">
+        <button type="button" data-v="review"><b>รีวิว</b><small>ใช้งานจริง บอกข้อดี</small></button>
+        <button type="button" data-v="howto"><b>สอนวิธีใช้</b><small>ติดตั้ง ใช้งานทีละขั้น</small></button>
+        <button type="button" data-v="unbox"><b>แกะกล่อง</b><small>ในกล่องมีอะไร</small></button>
+        <button type="button" data-v="problem"><b>แก้ปัญหา</b><small>เปิดด้วยปัญหาลูกค้า</small></button>
+        <button type="button" data-v="promo"><b>โปรโมชั่น</b><small>ลดราคา ของแถม</small></button>
+        <button type="button" data-v="faq"><b>ตอบคำถาม</b><small>ลูกค้าถามบ่อย</small></button>
+        <button type="button" data-v="compare"><b>เปรียบเทียบ</b><small>เทียบรุ่น เทียบแบบ</small></button>
+      </div>
+      <details class="inline" id="postMore">
+        <summary>เพิ่มรายละเอียดของคลิปนี้ (ไม่บังคับ)</summary>
+        <label class="f" for="f-postPromo">โปรเฉพาะโพสต์นี้</label>
+        <input type="text" id="f-postPromo" placeholder="เช่น ลดเหลือ 1,890 บาท ถึงสิ้นเดือนนี้" autocomplete="off">
+        <p class="help">ถ้าใส่ จะใช้แทนโปรโมชั่นในข้อมูลสินค้า (ไม่บันทึกลงระบบ)</p>
+        <label class="f" for="f-topics">ช่วงเวลาในคลิป</label>
+        <textarea id="f-topics" rows="3" placeholder="0:00 แกะกล่อง&#10;0:30 ติดตั้งบนแฮนด์"></textarea>
+      </details>
+    </div>
+
+    <!-- สไตล์ -->
+    <details class="card" id="styleBox">
+      <summary><div><h2>สไตล์การเขียน</h2><p class="sub" id="styleSum"></p></div></summary>
+      <div class="opt-row"><span>โทนภาษา</span>
+        <div class="seg" data-opt="tone"><button type="button" data-v="casual">เป็นกันเอง</button><button type="button" data-v="pro">มืออาชีพ</button><button type="button" data-v="hard">ขายแรง</button></div>
+      </div>
+      <div class="opt-row"><span>คำลงท้าย</span>
+        <div class="seg" data-opt="ending"><button type="button" data-v="">ไม่ใส่</button><button type="button" data-v="ครับ">ครับ</button><button type="button" data-v="ค่ะ">ค่ะ</button></div>
+      </div>
+      <div class="opt-row"><span>อีโมจิ</span>
+        <div class="seg" data-opt="emoji"><button type="button" data-v="on">ใส่อีโมจิ</button><button type="button" data-v="off">ไม่ใส่</button></div>
+      </div>
+    </details>
+
+    <!-- แก้ไขข้อมูลสินค้า -->
+    <details class="card" id="editor">
+      <summary><div><h2>ข้อมูลสินค้า</h2><p class="sub"><span class="save-state" id="saveState">ข้อมูลกลางของทีม แก้แล้วทุกคนเห็นทันที</span></p></div></summary>
+      <div class="grid2">
+        <div><label class="f" for="f-name">ชื่อสินค้า / รุ่น</label><input type="text" id="f-name" autocomplete="off"></div>
+        <div><label class="f" for="f-brand">แบรนด์</label><input type="text" id="f-brand" autocomplete="off"></div>
+        <div><label class="f" for="f-kw">คีย์เวิร์ดหลัก (คำที่ลูกค้าพิมพ์ค้นหา)</label><input type="text" id="f-kw" autocomplete="off"></div>
+        <div><label class="f" for="f-group">หมวดสินค้า</label><select id="f-group"></select></div>
+      </div>
+      <label class="f" for="f-kw2">คีย์เวิร์ดรอง (คั่นด้วยจุลภาค)</label>
+      <input type="text" id="f-kw2" autocomplete="off">
+      <label class="f" for="f-category">สินค้า คือ อะไร (ใช้ในประโยค "ชื่อสินค้า คือ...")</label>
+      <input type="text" id="f-category" autocomplete="off">
+      <div class="grid2">
+        <div><label class="f" for="f-audience">เหมาะกับใคร</label><input type="text" id="f-audience" autocomplete="off"></div>
+        <div><label class="f" for="f-problem">ปัญหาที่ลูกค้าเจอ</label><input type="text" id="f-problem" autocomplete="off"></div>
+      </div>
+      <label class="f" for="f-hooks">ประโยคเปิดเด่น ๆ (บรรทัดละ 1 ประโยค)</label>
+      <textarea id="f-hooks" rows="3"></textarea>
+      <label class="f" for="f-benefits">จุดเด่น / ประโยชน์ (บรรทัดละ 1 ข้อ)</label>
+      <textarea id="f-benefits" rows="4"></textarea>
+      <label class="f" for="f-specs">สเปก (บรรทัดละ 1 ข้อ)</label>
+      <textarea id="f-specs" rows="3"></textarea>
+      <label class="f" for="f-howto">วิธีใช้ (บรรทัดละ 1 ขั้นตอน)</label>
+      <textarea id="f-howto" rows="3"></textarea>
+      <label class="f" for="f-review">รีวิวจากลูกค้า</label>
+      <textarea id="f-review" rows="2"></textarea>
+      <div class="grid2">
+        <div><label class="f" for="f-price">ราคา</label><input type="text" id="f-price" autocomplete="off"></div>
+        <div><label class="f" for="f-promo">โปรโมชั่น</label><input type="text" id="f-promo" autocomplete="off"></div>
+        <div><label class="f" for="f-warranty">การรับประกัน</label><input type="text" id="f-warranty" autocomplete="off"></div>
+        <div><label class="f" for="f-area">การจัดส่ง / พื้นที่</label><input type="text" id="f-area" autocomplete="off"></div>
+      </div>
+      <label class="f" for="f-certs">มาตรฐาน / การรับรอง</label>
+      <input type="text" id="f-certs" autocomplete="off">
+      <p class="sec-label">คำถามที่ลูกค้าถามบ่อย <span class="help" style="font-weight:400">(คำถามที่ยังไม่มีคำตอบจะไม่ถูกใส่ในแคปชั่น)</span></p>
+      <div class="faq-list" id="faqList"></div>
+      <div class="row" style="margin-top:10px;justify-content:space-between">
+        <button type="button" class="btn sm" id="addFaq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>เพิ่มคำถาม</button>
+        <button type="button" class="btn sm" id="delProduct">ลบสินค้านี้ออกจากระบบ</button>
+      </div>
+    </details>
+
+    <!-- ข้อมูลร้าน -->
+    <details class="card" id="shopBox">
+      <summary><div><h2>ข้อมูลร้านและช่องทางติดต่อ</h2><p class="sub"><span class="save-state" id="shopState">ใช้กับทุกสินค้า ทุกคนในทีมเห็นเหมือนกัน</span></p></div></summary>
+      <div class="grid2">
+        <div><label class="f" for="f-page">ชื่อเพจ Facebook</label><input type="text" id="f-page" autocomplete="off"></div>
+        <div><label class="f" for="f-cta">ช่องทางหลักที่ชวนลูกค้า</label>
+          <select id="f-cta"><option value="chat">ทักแชทเพจ (Messenger)</option><option value="line">แอด LINE</option><option value="phone">โทร</option><option value="link">กดลิงก์สั่งซื้อ</option></select></div>
+        <div><label class="f" for="f-lineid">LINE ID</label><input type="text" id="f-lineid" autocomplete="off"></div>
+        <div><label class="f" for="f-phone">เบอร์โทร</label><input type="text" id="f-phone" autocomplete="off" inputmode="tel"></div>
+      </div>
+      <label class="f" for="f-stores">ร้านค้าออนไลน์อื่น</label>
+      <input type="text" id="f-stores" autocomplete="off">
+      <label class="f" for="f-link">ลิงก์สั่งซื้อ / เว็บไซต์</label>
+      <input type="text" id="f-link" placeholder="https://" autocomplete="off" inputmode="url">
+      <label class="chk"><input type="checkbox" id="f-linkIn"> ใส่ลิงก์ในแคปชั่นด้วย (ปกติจะไว้ในคอมเมนต์ปักหมุด)</label>
+      <label class="f" for="f-tags">แฮชแท็กประจำเพจ</label>
+      <input type="text" id="f-tags" autocomplete="off">
+    </details>
+  </section>
+
+  <!-- ====== ผลลัพธ์ ====== -->
+  <section class="col out" id="outCol" aria-label="แคปชั่นที่สร้างได้">
+    <div class="card">
+      <div class="card-h">
+        <div>
+          <h2><span class="step">3</span>คัดลอกแคปชั่น</h2>
+          <p class="sub">แก้ข้อความในกล่องได้ก่อนคัดลอก</p>
+        </div>
+        <button type="button" class="btn sm" id="shuffleBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg>สุ่มสำนวนใหม่</button>
+      </div>
+      <div class="seg tabs" role="tablist" aria-label="ฉบับแคปชั่น">
+        <button type="button" role="tab" data-tab="full">ฉบับเต็ม</button>
+        <button type="button" role="tab" data-tab="short">ฉบับกระชับ</button>
+        <button type="button" role="tab" data-tab="story">ฉบับเล่าเรื่อง</button>
+      </div>
+      <p class="tab-desc" id="tabDesc"></p>
+      <div class="bar" id="dirtyBar" hidden><span id="dirtyText"></span><button type="button" class="btn sm" id="resetBtn">สร้างใหม่จากข้อมูลสินค้า</button></div>
+
+      <p class="lbl">ที่คนเห็นในฟีด ก่อนกด "ดูเพิ่มเติม"</p>
+      <div class="fb" aria-label="ตัวอย่างโพสต์">
+        <div class="fb-h"><span class="fb-av" id="pvAv">B</span><div><b id="pvPage">เพจของคุณ</b><small>เมื่อสักครู่ · สาธารณะ</small></div></div>
+        <div class="fb-t"><span id="pvText"></span><span class="fb-more" id="pvMore">… ดูเพิ่มเติม</span></div>
+        <div class="fb-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z" fill="currentColor" stroke="none"/></svg>คลิปวิดีโอของคุณ</div>
+      </div>
+
+      <label class="lbl" for="cap">ข้อความเต็ม</label>
+      <textarea id="cap" class="cap" spellcheck="false" placeholder="เลือกสินค้าทางซ้าย แคปชั่นจะขึ้นที่นี่ทันที"></textarea>
+      <div class="meta">
+        <span class="counts num" id="counts"></span>
+        <button type="button" class="btn pri" data-copy="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>คัดลอกแคปชั่น</span></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>ชื่อวิดีโอ</h2>
+      <p class="sub">วางในช่อง "ชื่อ / Title" ตอนอัปโหลดวิดีโอ (แยกจากแคปชั่น) เลือกมา 1 แบบ</p>
+      <div id="titles"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h">
+        <div>
+          <h2>คอมเมนต์ปักหมุด</h2>
+          <p class="sub">โพสต์เป็นคอมเมนต์แรกใต้คลิป แล้วกดปักหมุด</p>
+        </div>
+        <button type="button" class="btn sm" data-copy="pinned"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>คัดลอก</span></button>
+      </div>
+      <div id="pinned"></div>
+    </div>
+
+    <div class="card split">
+      <div>
+        <div class="sec-t"><h3>แฮชแท็ก</h3><button type="button" class="btn sm" data-copy="hashtags"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>คัดลอก</span></button></div>
+        <p class="sub">ใส่ไว้ท้ายแคปชั่นแล้ว คัดลอกแยกไว้ใช้กับโพสต์อื่นได้</p>
+        <div class="chips" id="hashtags"></div>
+      </div>
+      <div>
+        <div class="sec-t"><h3>แท็กวิดีโอ</h3><button type="button" class="btn sm" data-copy="tags"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>คัดลอก</span></button></div>
+        <p class="sub">วางในช่อง "แท็ก / Tags" ตอนอัปโหลดวิดีโอผ่าน Meta Business Suite</p>
+        <div class="chips" id="tags"></div>
+      </div>
+    </div>
+
+    <details class="card">
+      <summary><div><h2>เช็กลิสต์ SEO / AEO</h2><p class="sub" id="scoreSum">SEO คือให้คนค้นเจอ · AEO คือให้ AI หยิบไปตอบ</p></div></summary>
+      <div class="checks" id="checks"></div>
+    </details>
+
+    <details class="card tips">
+      <summary><div><h2>เคล็ดลับให้คลิปติดค้นหา</h2></div></summary>
+      <ol>
+        <li>พูดคีย์เวิร์ดหลักออกเสียงชัด ๆ ใน 3 วินาทีแรก <span>Facebook ถอดเสียงพูดเป็นคำบรรยายได้ ระบบจึงเข้าใจว่าคลิปเกี่ยวกับอะไร</span></li>
+        <li>เปิดคำบรรยาย (Captions) ให้คลิป <span>คนที่ดูแบบปิดเสียงก็เข้าใจ และได้ข้อความเพิ่มให้ระบบอ่าน</span></li>
+        <li>ใส่ชื่อวิดีโอในช่อง Title ทุกครั้ง <span>อย่าปล่อยเป็นชื่อไฟล์ เช่น IMG_4521</span></li>
+        <li>ปักหมุดคอมเมนต์แรกที่มีราคา ลิงก์ และช่องทางติดต่อ</li>
+        <li>ตอบคอมเมนต์ลูกค้าโดยพูดชื่อสินค้าซ้ำในคำตอบ <span>ได้ข้อความที่มีคีย์เวิร์ดเพิ่มใต้โพสต์</span></li>
+        <li>ใช้คีย์เวิร์ดหลักชุดเดิมกับทุกคลิปของสินค้าตัวเดียวกัน <span>ให้ระบบจำได้ว่าเพจนี้เกี่ยวกับอะไร</span></li>
+        <li>ข้อมูลต้องตรงกันทุกที่ <span>ชื่อรุ่น ราคา สเปก ในโพสต์ Shopee Lazada และ TikTok ควรเหมือนกัน AI จะเชื่อข้อมูลที่ตรงกันหลายแหล่ง</span></li>
+      </ol>
+    </details>
+  </section>
+</main>
+
+<div class="mbar" id="mbar">
+  <button type="button" class="btn" id="mGo">ดูแคปชั่น</button>
+  <button type="button" class="btn pri" data-copy="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg><span>คัดลอกแคปชั่น</span></button>
+</div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="config.js"></script>
+<script>
+(() => {
+'use strict';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+/* ---------- ค่าตั้งต้น ---------- */
+const CFG = window.CAPTION_CONFIG || {};
+const GROUP_ORDER = ['ที่จับมือถือ/กล้อง มอเตอร์ไซค์', 'ที่จับมือถือในรถยนต์', 'ที่ชาร์จในรถยนต์', 'ที่ชาร์จไร้สาย / สายชาร์จ', 'อุปกรณ์รถยนต์อื่น ๆ', 'อุปกรณ์เสริมกล้อง', 'เตาแก๊ส / แคมป์ปิ้ง', 'เครื่องเสียง', 'ของใช้ในบ้าน', 'ความงาม', 'สินค้าอื่น ๆ'];
+const SHOP_DEFAULT = {
+  page: 'Blisstech Thailand', cta: 'chat', lineid: '@blisstech', phone: '', link: '', linkIn: false,
+  stores: 'Shopee · Lazada · TikTok Shop ร้าน BLISSTECH THAILAND', tags: '#Blisstech #BlisstechThailand',
+};
+const PKEYS = ['id','label','group','market','name','brand','kw','kw2','category','audience','problem','benefits','specs','hooks','howto','review','faqs','price','promo','warranty','shipping','certs'];
+const LISTKEYS = ['kw2','benefits','specs','hooks','howto','faqs'];
+const PFIELDS = ['name','brand','kw','kw2','category','audience','problem','hooks','benefits','specs','howto','review','price','promo','warranty','area','certs'];
+const POSTFIELDS = ['postPromo','topics'];
+const SHOPFIELDS = ['page','cta','lineid','phone','stores','link','tags'];
+const VARIANTS = ['full','short','story'];
+const K_UI = 'capgen.online.ui';
+const TAB_DESC = {
+  full: 'ครบทุกส่วน: ประโยคตอบตรง จุดเด่น สเปก รีวิว ถาม–ตอบ ราคา และช่องทางติดต่อ',
+  short: 'สั้น อ่านจบในฟีด เหมาะกับคลิปสั้นและ Reels',
+  story: 'เปิดด้วยปัญหาของลูกค้า แล้วพาไปที่สินค้า มีรีวิวและถาม–ตอบ 2 ข้อ',
+};
+const TONE_LABEL = {casual:'เป็นกันเอง', pro:'มืออาชีพ', hard:'ขายแรง'};
+
+const opts = {tone: 'casual', ending: '', emoji: 'on', vtype: 'review'};
+let faqs = [];
+let seed = 0;
+let pid = '';
+const state = {
+  tab: 'full',
+  out: {full: '', short: '', story: ''},
+  dirty: {full: false, short: false, story: false},
+  src: {full: 'tpl', short: 'tpl', story: 'tpl'},
+  ai: null, gen: null, extras: null,
+};
+let PRODUCTS = [];
+let meta = {};
+let shop = {...SHOP_DEFAULT};
+let sb = null, user = null, lastLoad = 0;
+
+/* ---------- ตัวช่วยข้อความ ---------- */
+const segmenter = (() => { try { return new Intl.Segmenter('th', {granularity: 'grapheme'}); } catch (e) { return null; } })();
+const graphemes = s => segmenter ? Array.from(segmenter.segment(s), x => x.segment) : Array.from(s);
+const glen = s => graphemes(s || '').length;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const BULLET = /^\s*(?:[-–•*·▪✓✔☑✅]️?|\d+[.)])\s*/u;
+const lines = s => (s || '').split('\n').map(x => x.replace(BULLET, '').trim()).filter(Boolean);
+const rawLines = s => (s || '').split('\n').map(x => x.trim()).filter(Boolean);
+const list = s => (s || '').split(/[,\n]/).map(x => x.trim()).filter(Boolean);
+const tagify = s => (s || '').replace(/^#+/, '').replace(/[^\p{L}\p{N}\p{M}_]/gu, '');
+const uniq = arr => { const seen = new Set(); return arr.filter(x => { if (!x) return false; const k = x.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; }); };
+const rot = (arr, k = 0) => arr[(seed + k) % arr.length];
+const rotAll = arr => arr.map((_, i) => arr[(seed + i) % arr.length]);
+const clone = x => JSON.parse(JSON.stringify(x));
+const TH = /[฀-๿]/;
+
+// ต่อคำไทยกับอังกฤษ/ตัวเลขให้มีเว้นวรรคคั่น แต่ไทยกับไทยต่อกันเลย
+function glue(a, b) {
+  if (!a || !b) return a + b;
+  const la = a.slice(-1), fb = b[0];
+  const need = (TH.test(la) && /[A-Za-z0-9@#]/.test(fb)) || (/[A-Za-z0-9%)]/.test(la) && TH.test(fb));
+  return need ? a + ' ' + b : a + b;
+}
+function fill(t, m) {
+  let out = '';
+  for (const p of t.split(/(\{\w+\})/)) {
+    const mm = p.match(/^\{(\w+)\}$/);
+    out = glue(out, mm ? (m[mm[1]] || '') : p);
+  }
+  return out.replace(/ {2,}/g, ' ').trim();
+}
+const usable = (t, m) => (t.match(/\{\w+\}/g) || []).every(k => m[k.slice(1, -1)]);
+const joinAnd = (arr, word = 'และ') => arr.length < 2 ? (arr[0] || '') : glue(arr.slice(0, -1).join(' ') + ' ' + word, arr[arr.length - 1]);
+
+let END = '';
+function withEnd(s) {
+  s = (s || '').trim();
+  if (!END || !s || /(ครับ|ค่ะ|คะ|จ้า|จ้ะ|นะ|[!?！？])$/.test(s)) return s;
+  s = s.replace(/[.。]+$/, '');
+  return /[A-Za-z0-9%)]$/.test(s) ? `${s} ${END}` : s + END;
+}
+
+/* ---------- คลังสำนวน ---------- */
+const HOOKS = {
+  review: ['รีวิว{subj} ใช้จริงเป็นยังไง คุ้มไหม?', '{subj} ดีไหม? รีวิวจากการใช้งานจริง', 'รีวิว{subj} จุดเด่นคือ{b1}'],
+  howto: ['วิธีใช้{subj} ดูจบทำตามได้ทันที', '{subj} ติดตั้งยังไง? สอนทีละขั้นในคลิปเดียว', 'วิธีใช้{subj}ให้ได้ผลดีที่สุด'],
+  compare: ['{kw} รุ่นไหนดี? เทียบ{name}ให้ดูชัด ๆ', 'เลือก{kw}ยังไงไม่ให้พลาด? เทียบให้ดูในคลิปนี้', '{kw} ต่างกันตรงไหน? เทียบ{name}แบบจุดต่อจุด'],
+  unbox: ['แกะกล่อง{subj} ในกล่องมีอะไรบ้าง?', 'แกะกล่อง{subj} ลองใช้ครั้งแรก', 'แกะกล่อง{subj} ของจริงเป็นยังไง'],
+  problem: ['{problem}? {subj}ช่วยได้', 'แก้ปัญหา{problem}ด้วย{subj}', 'เจอปัญหา{problem}อยู่ใช่ไหม? ดู{subj}ก่อน'],
+  promo: ['{subj} โปรโมชั่น {promo}', 'โปรนี้ห้ามพลาด! {subj} {promo}', '{subj} ราคาพิเศษ {promo}'],
+  faq: ['{kw} ดีไหม? ตอบทุกคำถามที่ลูกค้าถามบ่อย', '{subj} ใช้กับรถเราได้ไหม ทนไหม ประกันกี่ปี ตอบครบในคลิปนี้', 'ถามมาตอบไป เรื่อง{subj}'],
+};
+const STORY_OPEN = {
+  problem: ['ปัญหานี้ใกล้ตัวกว่าที่คิด แต่แก้ได้ง่ายกว่าที่คิดเหมือนกัน', 'เรื่องนี้กวนใจหลายคน แต่แก้ได้ไม่ยาก'],
+  none: ['ถ้ากำลังมองหา{kw}ที่ใช้ได้จริง คลิปนี้ช่วยให้ตัดสินใจง่ายขึ้น', 'ก่อนตัดสินใจซื้อ{kw} ดูคลิปนี้ก่อน'],
+};
+const CTA_T = {
+  casual: ['สนใจ{verb}ได้เลย', 'อยากได้หรือมีคำถาม {verb}ได้ตลอด', 'ใครสนใจ {verb}ได้เลย'],
+  pro: ['สอบถามข้อมูลเพิ่มเติมหรือสั่งซื้อได้ที่{place}', 'ปรึกษาการเลือกรุ่นที่เหมาะกับคุณได้ที่{place}', 'สั่งซื้อหรือสอบถามรายละเอียดได้ที่{place}'],
+  hard: ['{verb}สั่งเลยตอนนี้!', 'สนใจรีบ{verb}เลย!', 'ตัดสินใจง่าย ๆ {verb}สั่งได้ทันที!'],
+};
+const EMO_ON = {hook: {review:'⭐', howto:'🛠️', compare:'🔍', unbox:'📦', problem:'💡', promo:'🔥', faq:'🙋'}, bul:'✅', why:'✨', play:'🎬', spec:'📋', step:'🛠️', rev:'💬', faqH:'🙋', q:'❓', a:'👉', price:'🏷️', gift:'🎁', shield:'🛡️', ship:'🚚', cert:'🏅', line:'🟢', phone:'📞', link:'🔗', cart:'🛒', pin:'📌', chat:'💬'};
+const EMO_OFF = {hook: {}, bul:'•', why:'', play:'', spec:'', step:'', rev:'', faqH:'', q:'', a:'', price:'', gift:'', shield:'', ship:'', cert:'', line:'', phone:'', link:'', cart:'', pin:'', chat:''};
+const lab = (e, t) => e ? `${e} ${t}` : t;
+
+/* ---------- ประกอบแคปชั่น ---------- */
+function model(d) {
+  const ben = lines(d.benefits);
+  const nm = d.name, k = d.kw;
+  const subj = nm && k ? (nm.toLowerCase().includes(k.toLowerCase()) ? nm : `${k} ${nm}`) : (nm || k || 'สินค้าของเรา');
+  return {
+    name: nm || k || 'สินค้าของเรา',
+    kw: k || d.category || nm || '',
+    subj, cat: d.category || k || 'สินค้า',
+    brand: d.brand, ben, b1: ben[0] || '', b2: ben[1] || '',
+    specs: lines(d.specs), topics: rawLines(d.topics), kw2: list(d.kw2),
+    hooks: lines(d.hooks), howto: lines(d.howto),
+    review: (d.review || '').replace(/^["“”'\s]+|["“”'\s]+$/g, ''),
+    aud: (d.audience || '').replace(/^(เหมาะ(สำหรับ|กับ)|สำหรับ)\s*/, ''),
+    problem: d.problem, promo: d.postPromo || d.promo, price: d.price, area: d.area,
+    warranty: d.warranty, certs: d.certs, stores: d.stores,
+  };
+}
+
+function hooksFor(vt, m) {
+  let L = (HOOKS[vt] || []).filter(t => usable(t, m));
+  if (!L.length) L = HOOKS.review.filter(t => usable(t, m));
+  if (!L.length) L = ['{subj}'];
+  return L.map(t => fill(t, m));
+}
+
+function definition(m, mode) {
+  let s = fill('{name} คือ{cat}', m);
+  if (m.brand && !m.name.toLowerCase().includes(m.brand.toLowerCase())) s += ` จากแบรนด์ ${m.brand}`;
+  if (m.aud) s += ' ' + glue('เหมาะสำหรับ', m.aud);
+  if (mode === 'full' && m.b1) s += ' ' + glue('จุดเด่นคือ', m.b1);
+  return withEnd(s);
+}
+
+function placeOf(d) {
+  return {
+    chat: 'แชทเพจ', line: d.lineid ? `LINE ${d.lineid}` : 'LINE ของร้าน', phone: d.phone ? `เบอร์ ${d.phone}` : 'เบอร์ของร้าน',
+    link: d.link && d.linkIn ? 'ลิงก์ด้านล่าง' : 'ลิงก์ในคอมเมนต์แรก',
+  }[d.cta] || 'แชทเพจ';
+}
+function ctaLine(d) {
+  const verb = {chat:'ทักแชทเพจ', line:'แอด LINE', phone:'โทรหาเรา', link: d.linkIn ? 'กดลิงก์ด้านล่าง' : 'กดลิงก์ในคอมเมนต์แรก'}[d.cta] || 'ทักแชทเพจ';
+  return withEnd(fill(rot(CTA_T[opts.tone] || CTA_T.casual, 1), {verb, place: placeOf(d)}));
+}
+function contactLines(d, m, E, max = 9) {
+  const L = [];
+  if (d.lineid) L.push(lab(E.line, `LINE: ${d.lineid}`));
+  if (d.phone) L.push(lab(E.phone, `โทร: ${d.phone}`));
+  if (d.link) L.push(d.linkIn ? lab(E.link, `สั่งซื้อ: ${d.link}`) : lab(E.link, 'ลิงก์สั่งซื้ออยู่ในคอมเมนต์แรก'));
+  if (m.stores) L.push(lab(E.cart, m.stores));
+  return L.slice(0, max);
+}
+function trustLines(m, E, full = true) {
+  return [
+    m.price && lab(E.price, `ราคา ${m.price}`),
+    m.promo && lab(E.gift, `โปรโมชั่น: ${m.promo}`),
+    m.warranty && lab(E.shield, m.warranty),
+    full && m.area && lab(E.ship, m.area),
+    full && m.certs && lab(E.cert, m.certs),
+  ].filter(Boolean);
+}
+function contactSentence(d, m) {
+  const P = [];
+  if (d.cta === 'chat' || !(d.lineid || d.phone || d.link)) P.push('แชทเพจนี้');
+  if (d.lineid) P.push(`LINE ${d.lineid}`);
+  if (d.phone) P.push(`โทร ${d.phone}`);
+  if (d.link) P.push('ลิงก์ในคอมเมนต์ปักหมุด');
+  let s = joinAnd(P, 'หรือ');
+  if (m.stores) s += ` และมีขายที่ ${m.stores}`;
+  return s;
+}
+
+function buildFaqs(m, d) {
+  const user = faqs.filter(f => f.q.trim() && f.a.trim()).map(f => ({q: f.q.trim(), a: f.a.trim()}));
+  const has = re => user.some(f => re.test(f.q));
+  const auto = [];
+  if (m.price && !has(/ราคา|เท่าไ/)) auto.push({q: fill('{name} ราคาเท่าไหร่', m), a: `ราคา ${m.price}` + (m.promo ? ` ตอนนี้มีโปร ${m.promo}` : '')});
+  if (m.warranty && !has(/ประกัน/)) auto.push({q: fill('{name} มีรับประกันไหม', m), a: m.warranty});
+  if (!has(/ซื้อ|สั่ง|ที่ไหน/)) auto.push({q: fill('ซื้อ{name}ได้ที่ไหน', m), a: glue('สั่งซื้อได้ทาง', contactSentence(d, m)) + (m.area ? ` ${m.area}` : '')});
+  if (m.aud && !has(/เหมาะ|ใคร/)) auto.push({q: fill('{name} เหมาะกับใคร', m), a: glue('เหมาะสำหรับ', m.aud)});
+  return [...user, ...auto];
+}
+function qa(f, emo) {
+  const q = f.q.replace(/[?？\s]+$/, '') + '?';
+  return emo ? `${EMO_ON.q} ${q}\n${EMO_ON.a} ${withEnd(f.a)}` : `ถาม: ${q}\nตอบ: ${withEnd(f.a)}`;
+}
+
+function hashtags(m, d, n) {
+  const user = (d.tags || '').split(/[\s,]+/).map(tagify);
+  const cat = d.category && glen(d.category) <= 24 ? d.category : '';
+  return uniq([d.kw, ...user, (d.name || '').replace(/รุ่น/g, ''), m.brand, cat, ...m.kw2].map(tagify).filter(t => t && glen(t) <= 30)).slice(0, n).map(t => '#' + t);
+}
+
+function cut(s, n) {
+  const g = graphemes(s);
+  if (g.length <= n) return s;
+  const head = g.slice(0, n).join('');
+  const sp = head.lastIndexOf(' ');
+  return (sp > n * 0.6 ? head.slice(0, sp) : head).trim();
+}
+
+function generate(d) {
+  const m = model(d);
+  const emo = opts.emoji === 'on';
+  const E = emo ? EMO_ON : EMO_OFF;
+  END = opts.ending;
+  const vt = d.vtype;
+  const allFaq = buildFaqs(m, d);
+  const hooks = hooksFor(vt, m);
+  let hook = rot(hooks);
+  if (opts.tone === 'hard' && m.promo && vt !== 'promo' && glen(hook) + glen(m.promo) < 110) hook += ` ${m.promo}`;
+  const hookE = lab(E.hook[vt], hook);
+  const pHook = m.hooks.length ? rot(m.hooks, 3) : '';
+  const cta = ctaLine(d);
+  const steps = m.howto.map((s, i) => `${i + 1}. ${s}`);
+  const reviewBlock = m.review ? lab(E.rev, 'เสียงจากลูกค้า') + `\n“${m.review}”` : '';
+
+  // ฉบับเต็ม
+  const F = [];
+  F.push(pHook ? `${hookE}\n${pHook}` : hookE);
+  F.push(definition(m, 'full'));
+  if (m.ben.length) F.push([lab(E.why, fill('{name} ดียังไง?', m)), ...m.ben.map(b => `${E.bul} ${b}`)].join('\n'));
+  const showSteps = steps.length && (vt === 'howto' || vt === 'unbox');
+  if (showSteps) F.push([lab(E.step, fill('วิธีใช้{name}', m)), ...steps].join('\n'));
+  if (m.topics.length) F.push([lab(E.play, 'ในคลิปนี้มีอะไรบ้าง'), ...m.topics].join('\n'));
+  if (m.specs.length) F.push([lab(E.spec, fill('สเปก {name}', m)), ...m.specs.map(s => `- ${s}`)].join('\n'));
+  if (reviewBlock) F.push(reviewBlock);
+  const ff = allFaq.slice(0, showSteps ? 3 : 5);
+  if (ff.length) F.push(lab(E.faqH, fill('คำถามที่พบบ่อยเกี่ยวกับ{kw}', m)) + '\n' + ff.map(f => qa(f, emo)).join('\n\n'));
+  const tl = trustLines(m, E);
+  if (tl.length) F.push(tl.join('\n'));
+  F.push([cta, ...contactLines(d, m, E)].join('\n'));
+  const tagsFull = hashtags(m, d, 8);
+  if (tagsFull.length) F.push(tagsFull.join(' '));
+
+  // ฉบับกระชับ
+  const S = [];
+  S.push(`${hookE}\n${definition(m, 'short')}`);
+  if (m.ben.length) S.push(m.ben.slice(0, 3).map(b => `${E.bul} ${b}`).join('\n'));
+  const ts = trustLines(m, E, false);
+  if (ts.length) S.push(ts.join(emo ? '\n' : ' | '));
+  S.push([cta, ...contactLines(d, m, E, 2)].join('\n'));
+  const tagsShort = hashtags(m, d, 5);
+  if (tagsShort.length) S.push(tagsShort.join(' '));
+
+  // ฉบับเล่าเรื่อง
+  const T = [];
+  const pHooks = m.problem ? HOOKS.problem.filter(t => usable(t, m)).map(t => fill(t, m)) : [];
+  const storyHook = pHooks.length ? rot(pHooks, 2) : rot(hooks, 1);
+  const open = pHook || withEnd(fill(rot(m.problem ? STORY_OPEN.problem : STORY_OPEN.none, 1), m));
+  T.push(`${lab(E.hook[pHooks.length ? 'problem' : vt], storyHook)}\n\n${open}`);
+  T.push(definition(m, 'full'));
+  const rest = m.ben.slice(1, 4);
+  if (rest.length) T.push(withEnd(glue('ข้อดีอื่น ๆ คือ', joinAnd(rest))));
+  if (reviewBlock) T.push(reviewBlock);
+  const sf = allFaq.slice(0, 2);
+  if (sf.length) T.push(lab(E.faqH, 'คำถามที่ลูกค้าถามบ่อย') + '\n' + sf.map(f => qa(f, emo)).join('\n\n'));
+  if (tl.length) T.push(tl.join('\n'));
+  T.push([cta, ...contactLines(d, m, E, 3)].join('\n'));
+  const tagsStory = hashtags(m, d, 6);
+  if (tagsStory.length) T.push(tagsStory.join(' '));
+
+  // ชื่อวิดีโอ
+  const extraT = [];
+  if (d.kw && d.name && !d.name.toLowerCase().includes(d.kw.toLowerCase())) extraT.push(fill(m.b1 ? '{kw} {name} | {b1}' : '{kw} {name}', m));
+  if (d.name) extraT.push(fill('{name} ดีไหม? ' + (m.aud ? 'เหมาะกับ{aud}' : 'สรุปครบในคลิปเดียว'), m));
+  const titles = uniq([...rotAll(hooks), ...extraT]).map(t => cut(t, 80)).slice(0, 3);
+
+  // คอมเมนต์ปักหมุด
+  const P = [lab(E.pin, fill('สรุปข้อมูล {name}', m))];
+  if (m.price) P.push(`ราคา: ${m.price}`);
+  if (m.promo) P.push(`โปรโมชั่น: ${m.promo}`);
+  if (m.warranty) P.push(lab(E.shield, m.warranty));
+  if (m.area) P.push(lab(E.ship, m.area));
+  if (d.link) P.push(lab(E.link, `สั่งซื้อ: ${d.link}`));
+  if (d.lineid) P.push(lab(E.line, `LINE: ${d.lineid}`));
+  if (d.phone) P.push(lab(E.phone, `โทร: ${d.phone}`));
+  if (m.stores) P.push(lab(E.cart, m.stores));
+  P.push('', lab(E.chat, withEnd('สนใจพิมพ์ "สนใจ" ไว้ใต้คอมเมนต์นี้ แอดมินจะส่งรายละเอียดให้ทางแชท')));
+
+  // แท็กวิดีโอ
+  const cat = d.category && glen(d.category) <= 30 ? d.category : '';
+  const tags = uniq([d.kw, ...m.kw2, d.name, m.brand, cat]).slice(0, 10);
+
+  return {
+    full: F.join('\n\n'), short: S.join('\n\n'), story: T.join('\n\n'),
+    titles, pinned: P.join('\n'), hashtags: tagsFull, tags,
+  };
+}
+
+/* ---------- ตรวจ SEO / AEO ---------- */
+function audit(text, d, tab) {
+  const t = text || '';
+  const low = t.toLowerCase();
+  const kw = (d.kw || '').toLowerCase();
+  const first = graphemes(t).slice(0, 125).join('').toLowerCase();
+  const out = [];
+  const add = (st, title, hint) => out.push({st, title, hint});
+
+  if (!kw) add('bad', 'คีย์เวิร์ดหลักอยู่ช่วงต้นโพสต์', 'ยังไม่ได้ใส่คีย์เวิร์ดหลักในข้อมูลสินค้า');
+  else if (first.includes(kw)) add('ok', 'คีย์เวิร์ดหลักอยู่ใน 125 ตัวอักษรแรก', 'ส่วนนี้โชว์ก่อนกด "ดูเพิ่มเติม" และมีน้ำหนักกับการค้นหามากที่สุด');
+  else if (low.includes(kw)) add('warn', 'คีย์เวิร์ดหลักอยู่ช่วงต้นโพสต์', 'มีคีย์เวิร์ดแล้วแต่อยู่ลึกเกินไป ย้ายขึ้นไปไว้บรรทัดแรก');
+  else add('bad', 'คีย์เวิร์ดหลักอยู่ช่วงต้นโพสต์', 'ไม่พบคีย์เวิร์ดหลักในแคปชั่นเลย');
+
+  if (d.name) add(low.includes(d.name.toLowerCase()) ? 'ok' : 'warn', 'มีชื่อสินค้า / รุ่นในแคปชั่น', 'ช่วยให้คนที่ค้นชื่อรุ่นตรง ๆ เจอโพสต์นี้');
+  add(/คือ/.test(t) ? 'ok' : 'warn', 'มีประโยคตอบตรง "สินค้า คือ ..."', 'AI และ Google ชอบดึงประโยคนิยามสั้น ๆ ไปเป็นคำตอบ');
+
+  const qn = (t.match(/[?？]/g) || []).length;
+  if (tab === 'short') add(qn >= 1 ? 'ok' : 'info', 'มีประโยคคำถาม', 'ฉบับกระชับไม่จำเป็นต้องมีถาม–ตอบ ถ้าอยากติด AEO มากขึ้นใช้ฉบับเต็ม');
+  else add(qn >= 3 ? 'ok' : qn >= 1 ? 'warn' : 'bad', `มีคำถาม–คำตอบ (${qn} จุด)`, 'ตั้งหัวข้อเป็นคำถามที่ลูกค้าพิมพ์ค้นจริง แล้วตอบสั้น ๆ ตรง ๆ');
+
+  const tags = t.match(/#[\p{L}\p{N}\p{M}_]+/gu) || [];
+  add(tags.length >= 3 && tags.length <= 8 ? 'ok' : tags.length === 0 ? 'bad' : 'warn', `แฮชแท็ก ${tags.length} อัน`, 'ใช้ 3–8 อันที่ตรงกับสินค้า มากเกินไปดูเป็นสแปม');
+  add(/ทัก|แชท|inbox|line|ไลน์|โทร|สั่งซื้อ|สั่งได้|ลิงก์|คลิก/i.test(t) ? 'ok' : 'warn', 'มีคำชวนให้ทักหรือสั่งซื้อ', 'บอกคนดูให้ชัดว่าต้องทำอะไรต่อ');
+
+  const L = glen(t);
+  const [lo, hi] = tab === 'short' ? [120, 800] : [300, 2400];
+  add(L >= lo && L <= hi ? 'ok' : 'warn', `ความยาว ${L.toLocaleString('th-TH')} ตัวอักษร`, tab === 'short' ? 'ฉบับกระชับควรอยู่ราว 120–800 ตัวอักษร' : 'ฉบับเต็มควรอยู่ราว 300–2,400 ตัวอักษร');
+
+  if (kw) {
+    // ขั้นต่ำนับรวมแฮชแท็ก ส่วนเพดานนับเฉพาะเนื้อความ และยอมให้ซ้ำได้มากขึ้นเมื่อแคปชั่นยาว
+    const c = low.replace(/#[\p{L}\p{N}\p{M}_]+/gu, '').split(kw).length - 1;
+    const tagText = tags.join(' ').toLowerCase();
+    const all = c + tagText.split(kw.replace(/\s+/g, '')).length - 1;
+    const max = Math.max(6, Math.ceil(L / 180));
+    add(all >= 2 && c <= max ? 'ok' : 'warn', `ใช้คีย์เวิร์ดหลัก ${all} ครั้ง`, c > max ? `ซ้ำในเนื้อความบ่อยเกินไป อ่านแล้วไม่เป็นธรรมชาติ ลดให้เหลือไม่เกิน ${max} ครั้ง` : all < 2 ? 'ใส่เพิ่มอีกสักครั้งในเนื้อความหรือแฮชแท็ก' : 'เป็นธรรมชาติ ไม่ยัดคีย์เวิร์ด');
+  }
+  if (/https?:\/\/|www\./i.test(t)) add('info', 'มีลิงก์อยู่ในแคปชั่น', 'หลายเพจนิยมย้ายลิงก์ไปไว้ในคอมเมนต์ปักหมุดแทน');
+  return out;
+}
+
+/* ---------- แสดงผล ---------- */
+function render() {
+  const d = getData();
+  const g = (d.name || d.kw) ? generate(d) : null;
+  state.gen = g;
+  for (const v of VARIANTS) if (!state.dirty[v]) state.out[v] = g ? g[v] : '';
+  const cap = $('#cap');
+  if (!state.dirty[state.tab] && cap.value !== state.out[state.tab]) cap.value = state.out[state.tab];
+  renderExtras();
+  updateCaptionMeta();
+}
+
+const ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>';
+const ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+
+function renderExtras() {
+  const g = state.gen, ai = state.ai;
+  const x = g ? {
+    titles: ai && ai.titles.length ? ai.titles : g.titles,
+    pinned: ai && ai.pinned ? ai.pinned : g.pinned,
+    hashtags: ai && ai.hashtags.length ? ai.hashtags : g.hashtags,
+    tags: ai && ai.tags.length ? ai.tags : g.tags,
+  } : (ai || null);
+  state.extras = x;
+  const emptyMsg = '<p class="empty">เลือกสินค้าก่อน</p>';
+  $('#titles').innerHTML = x && x.titles.length ? '<div class="olist">' + x.titles.map((t, i) =>
+    `<div class="oitem"><p>${esc(t)}</p><span class="len num">${glen(t)} ตัวอักษร</span><button type="button" class="btn sm" data-copy="title:${i}" aria-label="คัดลอกชื่อวิดีโอแบบที่ ${i + 1}">${ICON_COPY}<span>คัดลอก</span></button></div>`).join('') + '</div>' : emptyMsg;
+  $('#pinned').innerHTML = x && x.pinned ? `<div class="pre">${esc(x.pinned)}</div>` : emptyMsg;
+  $('#hashtags').innerHTML = x && x.hashtags.length ? x.hashtags.map(t => `<span class="chip">${esc(t)}</span>`).join('') : '<span class="sub">ยังไม่มี</span>';
+  $('#tags').innerHTML = x && x.tags.length ? x.tags.map(t => `<span class="chip">${esc(t)}</span>`).join('') : '<span class="sub">ยังไม่มี</span>';
+}
+
+function updateCaptionMeta() {
+  const d = getData();
+  const t = $('#cap').value;
+  const g = graphemes(t);
+  let shown = '', nl = 0, cutOff = false;
+  for (let i = 0; i < g.length; i++) {
+    if (i >= 125) { cutOff = true; break; }
+    if (g[i] === '\n' && ++nl >= 3) { cutOff = true; break; }
+    shown += g[i];
+  }
+  let html = esc(shown.replace(/\s+$/, ''));
+  if (d.kw) html = html.replace(new RegExp(reEsc(esc(d.kw)), 'gi'), m => `<mark>${m}</mark>`);
+  $('#pvText').innerHTML = html || '<span style="color:var(--faint)">ข้อความบรรทัดแรกจะโชว์ตรงนี้</span>';
+  $('#pvMore').hidden = !cutOff;
+  const page = d.page || 'เพจของคุณ';
+  $('#pvPage').textContent = page;
+  $('#pvAv').textContent = graphemes(page)[0] || 'B';
+
+  const tagN = (t.match(/#[\p{L}\p{N}\p{M}_]+/gu) || []).length;
+  $('#counts').textContent = t ? `${glen(t).toLocaleString('th-TH')} ตัวอักษร · แฮชแท็ก ${tagN}` : '';
+
+  const src = state.src[state.tab];
+  const bar = $('#dirtyBar');
+  bar.hidden = !state.dirty[state.tab];
+  bar.className = 'bar ' + (src === 'ai' ? 'ai' : 'edit');
+  $('#dirtyText').textContent = src === 'ai' ? 'ฉบับนี้เขียนโดย AI ระบบจะไม่เขียนทับ' : 'คุณแก้ข้อความฉบับนี้เอง ระบบจะไม่เขียนทับ';
+
+  if (!t.trim()) {
+    $('#checks').innerHTML = '<p class="empty">ยังไม่มีแคปชั่นให้ตรวจ</p>';
+    $('#scoreSum').textContent = 'SEO คือให้คนค้นเจอ · AEO คือให้ AI หยิบไปตอบ';
+    return;
+  }
+  const items = audit(t, d, state.tab);
+  const graded = items.filter(i => i.st !== 'info');
+  const pass = graded.filter(i => i.st === 'ok').length;
+  $('#scoreSum').textContent = `ผ่าน ${pass} จาก ${graded.length} ข้อ · SEO คือให้คนค้นเจอ · AEO คือให้ AI หยิบไปตอบ`;
+  const LBL = {ok: 'ผ่าน', warn: 'ควรปรับ', bad: 'ยังไม่มี', info: 'แนะนำ'};
+  $('#checks').innerHTML = items.map(i => `<div class="ck"><span class="zone ${i.st}">${LBL[i.st]}</span><div><b>${esc(i.title)}</b><span>${esc(i.hint)}</span></div></div>`).join('');
+}
+
+/* ---------- ข้อมูลกลาง (Supabase) ---------- */
+function friendly(e) {
+  const msg = (e && (e.message || e.error_description || e.msg)) || String(e || '');
+  if (/failed to fetch|network/i.test(msg)) return 'เชื่อมต่ออินเทอร์เน็ตไม่ได้ ลองใหม่อีกครั้ง';
+  if (/jwt|token|expired|PGRST30/i.test(msg)) return 'การเข้าสู่ระบบหมดอายุ ออกจากระบบแล้วเข้าใหม่';
+  if (/row-level security|permission denied/i.test(msg)) return 'บัญชีนี้ไม่มีสิทธิ์แก้ข้อมูล ให้แอดมินเพิ่มอีเมลในตาราง caption_staff';
+  return msg;
+}
+function normProduct(p) {
+  const o = {};
+  for (const k of PKEYS) o[k] = p[k] != null ? p[k] : (LISTKEYS.includes(k) ? [] : '');
+  for (const k of LISTKEYS) if (!Array.isArray(o[k])) o[k] = [];
+  o.id = String(o.id).trim();
+  if (!GROUP_ORDER.includes(o.group)) o.group = 'สินค้าอื่น ๆ';
+  if (!o.label) o.label = o.name || o.id;
+  if (o.market !== 'LA') o.market = 'TH';
+  return o;
+}
+async function loadProducts() {
+  const {data, error} = await sb.from('caption_products').select('id,data,updated_at,updated_by');
+  if (error) throw error;
+  PRODUCTS = data.map(r => normProduct({...r.data, id: r.id}));
+  meta = Object.fromEntries(data.map(r => [r.id, {at: r.updated_at, by: r.updated_by}]));
+  lastLoad = Date.now();
+}
+async function loadShop() {
+  const {data, error} = await sb.from('caption_shop_settings').select('data').eq('id', 1).maybeSingle();
+  if (error) throw error;
+  shop = Object.assign({}, SHOP_DEFAULT, (data && data.data) || {});
+}
+
+/* ---------- สินค้า ---------- */
+function productToForm(p) {
+  const j = a => (a || []).join('\n');
+  return {
+    name: p.name || '', brand: p.brand || '', kw: p.kw || '', kw2: (p.kw2 || []).join(', '), category: p.category || '',
+    audience: p.audience || '', problem: p.problem || '', hooks: j(p.hooks), benefits: j(p.benefits), specs: j(p.specs),
+    howto: j(p.howto), review: p.review || '', price: p.price || '', promo: p.promo || '', warranty: p.warranty || '',
+    area: p.shipping || '', certs: p.certs || '',
+  };
+}
+function formToProduct(base) {
+  const v = k => $('#f-' + k).value.trim();
+  const p = {...base,
+    name: v('name'), brand: v('brand'), kw: v('kw'), kw2: list(v('kw2')), category: v('category'),
+    audience: v('audience'), problem: v('problem'), hooks: lines(v('hooks')), benefits: lines(v('benefits')),
+    specs: lines(v('specs')), howto: lines(v('howto')), review: v('review'), price: v('price'), promo: v('promo'),
+    warranty: v('warranty'), shipping: v('area'), certs: v('certs'), group: $('#f-group').value,
+    faqs: faqs.filter(f => f.q.trim() || f.a.trim()).map(f => ({q: f.q.trim(), a: f.a.trim()})),
+  };
+  if (p.name !== (base.name || '') || !p.label) p.label = cut(p.name || 'สินค้าใหม่', 45);
+  return p;
+}
+const findP = id => PRODUCTS.find(p => p.id === id);
+function renderSelect() {
+  const q = $('#pSearch').value.trim().toLowerCase();
+  const items = PRODUCTS.map(p => ({p, search: [p.label, p.name, p.kw, p.id, ...(p.kw2 || [])].join(' ').toLowerCase()}));
+  const shown = q ? items.filter(x => x.search.includes(q)) : items;
+  const count = {};
+  PRODUCTS.forEach(p => { count[p.label] = (count[p.label] || 0) + 1; });
+  let html = '';
+  for (const g of GROUP_ORDER) {
+    const ps = shown.filter(x => x.p.group === g).map(x => x.p).sort((a, b) => a.label.localeCompare(b.label, 'th'));
+    if (!ps.length) continue;
+    html += `<optgroup label="${esc(g)}">` + ps.map(p => {
+      let t = p.label;
+      if (p.market === 'LA') t += ' · ลาว';
+      else if (count[p.label] > 1) t += ` · ${p.id}`;
+      return `<option value="${esc(p.id)}">${esc(t)}</option>`;
+    }).join('') + '</optgroup>';
+  }
+  if (!html) html = `<option value="" disabled>${PRODUCTS.length ? 'ไม่พบสินค้าที่ค้นหา' : 'ยังไม่มีสินค้า'}</option>`;
+  const sel = $('#pSelect');
+  sel.innerHTML = html;
+  if (shown.some(x => x.p.id === pid)) sel.value = pid;
+  else if (q && shown.length) sel.value = shown[0].p.id;
+  $('#noProducts').hidden = PRODUCTS.length > 0;
+}
+const fmtTime = iso => { try { return new Date(iso).toLocaleString('th-TH', {dateStyle: 'medium', timeStyle: 'short'}); } catch (e) { return ''; } };
+function renderSummary() {
+  const p = findP(pid);
+  $('#psum').hidden = !p;
+  if (!p) return;
+  $('#psName').textContent = p.name || p.label;
+  $('#psGroup').textContent = p.market === 'LA' ? `${p.group} · ลาว` : p.group;
+  $('#psPrice').textContent = p.price || '-';
+  $('#psWarranty').textContent = p.warranty || '';
+  const m = meta[p.id];
+  $('#psUpd').textContent = m && m.at ? `แก้ไขล่าสุด ${fmtTime(m.at)}${m.by ? ' โดย ' + m.by : ''}` : '';
+}
+function selectProduct(id, {keepPost = false} = {}) {
+  if (pSaveT) flushProduct();
+  const p = findP(id);
+  if (!p) return;
+  pid = id;
+  const f = productToForm(p);
+  for (const k of PFIELDS) $('#f-' + k).value = f[k] || '';
+  $('#f-group').value = p.group;
+  faqs = clone(p.faqs || []).map(x => ({q: x.q || '', a: x.a || ''}));
+  if (!faqs.length) faqs.push({q: '', a: ''});
+  renderFaqs();
+  if (!keepPost) for (const k of POSTFIELDS) $('#f-' + k).value = '';
+  resetOutputs();
+  renderSummary();
+  setSave('', 'ข้อมูลกลางของทีม แก้แล้วทุกคนเห็นทันที');
+  saveUi();
+}
+function setSave(kind, text) {
+  const el = $('#saveState');
+  el.className = 'save-state' + (kind ? ' ' + kind : '');
+  el.textContent = text;
+}
+let pSaveT = 0, pQueue = Promise.resolve();
+function saveProductSoon() {
+  clearTimeout(pSaveT);
+  setSave('pending', 'มีการแก้ไข กำลังจะบันทึก…');
+  pSaveT = setTimeout(flushProduct, 800);
+}
+function flushProduct() {
+  clearTimeout(pSaveT); pSaveT = 0;
+  const i = PRODUCTS.findIndex(p => p.id === pid);
+  if (i < 0) return pQueue;
+  const p = formToProduct(PRODUCTS[i]);
+  PRODUCTS[i] = p;
+  const id = p.id;
+  setSave('saving', 'กำลังบันทึก…');
+  pQueue = pQueue.then(async () => {
+    const {data, error} = await sb.from('caption_products').upsert({id, data: p}).select('updated_at,updated_by').single();
+    if (error) { if (id === pid) setSave('error', 'บันทึกไม่สำเร็จ: ' + friendly(error)); toast('บันทึกไม่สำเร็จ: ' + friendly(error)); return; }
+    meta[id] = {at: data.updated_at, by: data.updated_by};
+    if (id === pid) { setSave('saved', 'บันทึกแล้ว ทุกคนในทีมเห็นข้อมูลนี้'); renderSummary(); }
+    renderSelect();
+  });
+  return pQueue;
+}
+
+/* ---------- ร้าน ---------- */
+function applyShop() {
+  for (const k of SHOPFIELDS) $('#f-' + k).value = shop[k] != null ? shop[k] : '';
+  $('#f-linkIn').checked = !!shop.linkIn;
+}
+let sSaveT = 0;
+function saveShopSoon() {
+  for (const k of SHOPFIELDS) shop[k] = $('#f-' + k).value.trim();
+  shop.linkIn = $('#f-linkIn').checked;
+  const el = $('#shopState');
+  el.className = 'save-state pending'; el.textContent = 'มีการแก้ไข กำลังจะบันทึก…';
+  clearTimeout(sSaveT);
+  sSaveT = setTimeout(async () => {
+    sSaveT = 0;
+    el.className = 'save-state saving'; el.textContent = 'กำลังบันทึก…';
+    const {error} = await sb.from('caption_shop_settings').upsert({id: 1, data: shop});
+    if (error) { el.className = 'save-state error'; el.textContent = 'บันทึกไม่สำเร็จ: ' + friendly(error); return; }
+    el.className = 'save-state saved'; el.textContent = 'บันทึกแล้ว ทุกคนในทีมเห็นข้อมูลนี้';
+  }, 800);
+}
+
+/* ---------- ฟอร์ม ---------- */
+function getData() {
+  const d = {};
+  for (const k of [...PFIELDS, ...POSTFIELDS, ...SHOPFIELDS]) { const el = $('#f-' + k); d[k] = el ? el.value.trim() : ''; }
+  d.linkIn = $('#f-linkIn').checked;
+  d.vtype = opts.vtype;
+  return d;
+}
+const store = {
+  get(k, def) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (e) { return def; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } },
+};
+function saveUi() { store.set(K_UI, {pid, tone: opts.tone, ending: opts.ending, emoji: opts.emoji, vtype: opts.vtype, tab: state.tab}); }
+function syncSeg() {
+  $$('.seg[data-opt]').forEach(s => {
+    const k = s.dataset.opt;
+    $$('button', s).forEach(b => { const on = b.dataset.v === opts[k]; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
+  });
+  $$('#vtypes button').forEach(b => { const on = b.dataset.v === opts.vtype; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
+  $$('.tabs button').forEach(b => { const on = b.dataset.tab === state.tab; b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); });
+  $('#tabDesc').textContent = TAB_DESC[state.tab];
+  $('#styleSum').textContent = `${TONE_LABEL[opts.tone]} · ${opts.ending ? 'ลงท้าย ' + opts.ending : 'ไม่ใส่คำลงท้าย'} · ${opts.emoji === 'on' ? 'มีอีโมจิ' : 'ไม่มีอีโมจิ'}`;
+}
+function renderFaqs() {
+  const box = $('#faqList');
+  box.innerHTML = '';
+  faqs.forEach((f, i) => {
+    const row = document.createElement('div');
+    row.className = 'faq';
+    row.innerHTML = `<div class="faq-h"><label class="faq-n" for="faq-q-${i}">คำถามที่ ${i + 1}</label><button type="button" class="icon-x" aria-label="ลบคำถามที่ ${i + 1}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+      <input type="text" id="faq-q-${i}" placeholder="คำถาม เช่น ใช้กับมือถือรุ่นไหนได้บ้าง" autocomplete="off">
+      <textarea id="faq-a-${i}" rows="2" placeholder="คำตอบสั้น ๆ ตรง ๆ 1–2 ประโยค" aria-label="คำตอบของคำถามที่ ${i + 1}"></textarea>`;
+    const q = $('input', row), a = $('textarea', row);
+    q.value = f.q; a.value = f.a;
+    q.addEventListener('input', () => { f.q = q.value; productChanged(); });
+    a.addEventListener('input', () => { f.a = a.value; productChanged(); });
+    $('.icon-x', row).addEventListener('click', () => {
+      faqs.splice(i, 1);
+      if (!faqs.length) faqs.push({q: '', a: ''});
+      renderFaqs(); productChanged();
+    });
+    box.appendChild(row);
+  });
+}
+
+/* ---------- คัดลอก ---------- */
+function copySource(key) {
+  const x = state.extras;
+  if (key === 'cap') return $('#cap').value;
+  if (!x) return '';
+  if (key.startsWith('title:')) return x.titles[+key.slice(6)] || '';
+  if (key === 'pinned') return x.pinned || '';
+  if (key === 'hashtags') return x.hashtags.join(' ');
+  if (key === 'tags') return x.tags.join(', ');
+  return '';
+}
+async function copy(text, key) {
+  if (!text) { toast('ยังไม่มีข้อความให้คัดลอก'); return; }
+  let ok = false;
+  try { await navigator.clipboard.writeText(text); ok = true; } catch (e) { /* ใช้วิธีสำรองด้านล่าง */ }
+  if (!ok) {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    ta.remove();
+  }
+  if (!ok) {
+    if (key === 'cap') { const c = $('#cap'); c.focus(); c.select(); }
+    toast('คัดลอกอัตโนมัติไม่ได้ เลือกข้อความแล้วกด Ctrl+C หรือ ⌘+C');
+    return;
+  }
+  toast('คัดลอกแล้ว นำไปวางได้เลย');
+  $$(`[data-copy="${key}"]`).forEach(b => {
+    if (!b.dataset.html) b.dataset.html = b.innerHTML;
+    b.innerHTML = ICON_CHECK + '<span>คัดลอกแล้ว</span>';
+    b.classList.add('done');
+    clearTimeout(+b.dataset.t);
+    b.dataset.t = setTimeout(() => { b.innerHTML = b.dataset.html; b.classList.remove('done'); delete b.dataset.html; }, 1600);
+  });
+}
+let toastT;
+function toast(msg) {
+  const el = $('#toast');
+  el.textContent = msg; el.classList.add('show');
+  clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('show'), 2600);
+}
+let renderT;
+function changed() { clearTimeout(renderT); renderT = setTimeout(render, 120); }
+function productChanged() { changed(); saveProductSoon(); }
+function twoTap(btn, label, fn) {
+  if (btn.dataset.armed) {
+    clearTimeout(+btn.dataset.t); delete btn.dataset.armed;
+    btn.textContent = btn.dataset.orig; btn.classList.remove('danger');
+    fn(); return;
+  }
+  btn.dataset.orig = btn.textContent; btn.dataset.armed = '1';
+  btn.textContent = label; btn.classList.add('danger');
+  btn.dataset.t = setTimeout(() => { delete btn.dataset.armed; btn.textContent = btn.dataset.orig; btn.classList.remove('danger'); }, 3000);
+}
+function resetOutputs() {
+  for (const v of VARIANTS) { state.dirty[v] = false; state.src[v] = 'tpl'; }
+  state.ai = null;
+}
+
+/* ---------- อ่านไฟล์สินค้า (Excel แบบ Framework Product หรือ .json) ---------- */
+const TOPIC = {name: 'ชื่อแบรนด์', what: 'สินค้า คือ', persona: 'persona', feat: 'คุณสมบัติ', ben: 'คุณประโยชน์', usp: 'unique selling',
+  bomb: 'big benefit', howto: 'วิธีการใช้งาน', selfrev: 'รีวิวตัวเอง', custrev: 'รีวิวและเรื่องราว', whynot: 'why not', cert: 'รางวัล',
+  price: 'ราคา', promo: 'โปรโมชั่น', order: 'ข้อมูลการสั่งซื้อ'};
+// ไม่อ่านหัวข้อ: คู่แข่งทางตรง คู่แข่งทางอ้อม ไม่เหมาะกับใคร นโยบายการคืน ต้นทุนสินค้า
+const isTpl = v => /^-\s*(ระบุ|อธิบาย|นำเสนอ|แจ้ง|วิเคราะห์|พิจารณา|เขียน|แชร์)/.test(v);
+const tidy = s => String(s || '').replace(/<br\s*\/?>/gi, '\n').replace(/[“”"]/g, '').replace(/[ \t ]+/g, ' ').trim();
+function items(s, max, cap) {
+  const parts = tidy(s).split(/\n+|\s(?=\d{1,2}[.)]\s*[^\d\s])/)
+    .map(x => x.replace(BULLET, '').replace(/^[-–•]\s*/, '').trim()).filter(x => glen(x) > 2);
+  return uniq(parts.map(x => cut(x, cap))).slice(0, max);
+}
+function guessKw(cat) {
+  let k = (cat.split(/[\s,(]/)[0] || cat).trim();
+  if (glen(k) > 28) {
+    let at = -1;
+    for (const w of ['ที่ใช้', 'ที่มี', 'ที่สามารถ', 'ที่ช่วย', 'สำหรับ', 'แบบ', 'ซึ่ง']) {
+      const i = k.indexOf(w, 6);
+      if (i > 0 && (at < 0 || i < at)) at = i;
+    }
+    if (at > 0) k = k.slice(0, at);
+  }
+  return k;
+}
+const GROUP_RULES = [
+  [/มอเตอร์ไซ|มอไซ/, 'ที่จับมือถือ/กล้อง มอเตอร์ไซค์'],
+  [/inverter|อินเวอร์เตอร์|แปลงไฟ/i, 'อุปกรณ์รถยนต์อื่น ๆ'],
+  [/ไร้สาย|สายชาร์จ|wireless|qi2?\b/i, 'ที่ชาร์จไร้สาย / สายชาร์จ'],
+  [/ชาร์จ|charger/i, 'ที่ชาร์จในรถยนต์'],
+  [/ที่จับ|ที่ยึด|ที่วาง|holder/i, 'ที่จับมือถือในรถยนต์'],
+  [/เตา|แคมป์/, 'เตาแก๊ส / แคมป์ปิ้ง'],
+  [/ลำโพง|speaker/i, 'เครื่องเสียง'],
+  [/เซรั่ม|ผิว|ครีม|สิว/, 'ความงาม'],
+  [/ถูพื้น|ม็อบ|mop/i, 'ของใช้ในบ้าน'],
+  [/กล้อง|1\/4/, 'อุปกรณ์เสริมกล้อง'],
+  [/รถ|ปัดน้ำฝน|เคลือบ/, 'อุปกรณ์รถยนต์อื่น ๆ'],
+];
+function parseSheet(sheetName, map) {
+  const get = key => {
+    for (const k of Object.keys(map)) {
+      if (/ต้นทุน|คู่แข่ง/.test(k)) continue;  // ไม่ใช้ข้อมูลต้นทุนและคู่แข่งเด็ดขาด
+      if (k.replace(/\s+/g, ' ').toLowerCase().startsWith(key.toLowerCase())) return isTpl(map[k]) ? '' : map[k];
+    }
+    return '';
+  };
+  const nameRaw = tidy(get(TOPIC.name)).replace(/^-\s*/, '').split('\n')[0];
+  const what = tidy(get(TOPIC.what)).replace(/^-\s*/, '').split('\n')[0].replace(/^เป็น/, '');
+  if (!nameRaw && !what) return null;
+  const name = cut(nameRaw || what, 60);
+  const category = cut(what || nameRaw, 80);
+  const priceTxt = tidy(get(TOPIC.price));
+  let price = '';
+  if (!/x{2,}/i.test(priceTxt)) {
+    const m = priceTxt.match(/(\d{1,3}(?:,\d{3})+|\d{2,7})/);
+    if (m) price = Number(m[1].replace(/,/g, '')).toLocaleString('en-US') + (/กีบ|ກີບ/.test(priceTxt) ? ' กีบ' : ' บาท');
+  }
+  let warranty = '';
+  for (const src of [priceTxt, get(TOPIC.usp), get(TOPIC.cert), get(TOPIC.bomb)]) {
+    const m = tidy(src).match(/รับประกัน[^\n]{0,45}/);
+    if (m) { warranty = m[0].split(/\s(?=\d{1,2}[.)])/)[0].trim(); break; }
+  }
+  const promo = items(get(TOPIC.promo), 4, 100).filter(x => !/ลูกค้าเก่า|x{2,}|\.{3}/i.test(x))[0] || '';
+  const certRaw = items(get(TOPIC.cert), 1, 80)[0] || '';
+  const whynot = tidy(get(TOPIC.whynot)).replace(/(ไหม|มั้ย|หรือเปล่า|หรือไม่|\?)\s+/g, '$1\n').split(/\n+/)
+    .map(x => x.replace(BULLET, '').replace(/^[-–•]\s*/, '').trim())
+    .filter(x => glen(x) > 4 && glen(x) <= 80 && /(ไหม|มั้ย|หรือเปล่า|หรือไม่|อะไร|ยังไง|อย่างไร|เท่าไ|\?)$/.test(x));
+  const all = [sheetName, nameRaw, what, priceTxt, get(TOPIC.order), get(TOPIC.promo)].join(' ');
+  return normProduct({
+    id: sheetName.trim(), label: cut(name, 45), name, category, kw: guessKw(category),
+    brand: /blisstech/i.test(nameRaw + ' ' + what) ? 'BLISSTECH' : '',
+    group: (GROUP_RULES.find(([re]) => re.test(name + ' ' + what)) || [0, 'สินค้าอื่น ๆ'])[1],
+    market: /กีบ|ກີບ|เวียงจันทน์|\blao|laos|ลาว/i.test(all) ? 'LA' : 'TH',
+    audience: cut(items(get(TOPIC.persona), 3, 60).join(' '), 100),
+    hooks: items(get(TOPIC.bomb), 4, 90),
+    benefits: uniq([...items(get(TOPIC.ben), 6, 90), ...items(get(TOPIC.usp), 4, 90)]).slice(0, 6),
+    specs: items(get(TOPIC.feat), 6, 100),
+    howto: items(get(TOPIC.howto), 5, 120),
+    review: items(get(TOPIC.custrev), 1, 150)[0] || items(get(TOPIC.selfrev), 1, 150)[0] || '',
+    faqs: uniq(whynot).slice(0, 5).map(q => ({q, a: ''})),
+    price, promo, warranty,
+    shipping: items(get(TOPIC.order), 1, 100)[0] || '',
+    certs: /^ไม่มี/.test(certRaw) ? '' : certRaw,
+  });
+}
+function parseExcel(buf) {
+  if (!window.XLSX) throw new Error('โหลดตัวอ่าน Excel ไม่สำเร็จ ตรวจอินเทอร์เน็ตแล้วรีเฟรชหน้า');
+  const wb = XLSX.read(buf, {type: 'array'});
+  const out = [];
+  for (const name of wb.SheetNames) {
+    const rows = XLSX.utils.sheet_to_json(wb.Sheets[name], {header: 1, defval: '', raw: false});
+    const map = {};
+    for (const r of rows) {
+      const k = String(r[1] || '').trim(), v = String(r[2] || '').trim();
+      if (k && v) map[k] = v;
+    }
+    const p = parseSheet(name, map);
+    if (p) out.push(p);
+  }
+  return out;
+}
+function parseJson(text) {
+  const arr = JSON.parse(text);
+  if (!Array.isArray(arr)) throw new Error('ไฟล์ .json ต้องเป็นรายการสินค้า');
+  return arr.filter(x => x && x.id && (x.name || x.label)).map(normProduct);
+}
+
+let upItems = [];
+function showUpload(fileName, list) {
+  if (!list.length) { toast('ไม่พบสินค้าในไฟล์นี้ ใช้ไฟล์ Excel แบบ Framework Product หรือไฟล์ .json ของระบบ'); return; }
+  upItems = list.map(p => ({p, exists: !!findP(p.id), on: !findP(p.id)}));
+  const nNew = upItems.filter(x => !x.exists).length;
+  $('#upSub').textContent = `${fileName} · พบ ${list.length} สินค้า (ใหม่ ${nNew}, มีในระบบแล้ว ${list.length - nNew}) ตรวจชื่อกับคีย์เวิร์ดหลัก แล้วกดบันทึก สินค้าที่มีอยู่แล้วจะไม่ถูกเลือกไว้ เพื่อไม่ให้ทับข้อมูลที่แก้ไว้`;
+  const gopts = GROUP_ORDER.map(g => `<option>${esc(g)}</option>`).join('');
+  $('#upList').innerHTML = upItems.map((x, i) => `
+    <div class="up-row${x.on ? '' : ' off'}" data-i="${i}">
+      <input type="checkbox" id="up-on-${i}" ${x.on ? 'checked' : ''} aria-label="เลือก ${esc(x.p.id)}">
+      <div>
+        <div class="up-top"><b>${esc(x.p.id)}</b><span class="zone ${x.exists ? 'warn' : 'ok'}">${x.exists ? 'มีในระบบแล้ว · จะเขียนทับ' : 'สินค้าใหม่'}</span></div>
+        <div class="grid2">
+          <div><label class="f" for="up-name-${i}">ชื่อสินค้า</label><input type="text" id="up-name-${i}" data-k="name" value="${esc(x.p.name)}"></div>
+          <div><label class="f" for="up-kw-${i}">คีย์เวิร์ดหลัก</label><input type="text" id="up-kw-${i}" data-k="kw" value="${esc(x.p.kw)}"></div>
+          <div><label class="f" for="up-group-${i}">หมวดสินค้า</label><select id="up-group-${i}" data-k="group">${gopts}</select></div>
+          <div><label class="f" for="up-price-${i}">ราคา</label><input type="text" id="up-price-${i}" data-k="price" value="${esc(x.p.price)}"></div>
+        </div>
+        <p class="help">จุดเด่น ${x.p.benefits.length} ข้อ · ประโยคเปิด ${x.p.hooks.length} · คำถาม ${x.p.faqs.length} ข้อ${x.p.faqs.some(f => !f.a) ? ' (เติมคำตอบได้ทีหลังในหน้าแก้ไขข้อมูลสินค้า)' : ''}</p>
+      </div>
+    </div>`).join('');
+  upItems.forEach((x, i) => { $(`#up-group-${i}`).value = x.p.group; });
+  updateUpCount();
+  $('#upCard').hidden = false;
+  $('#upCard').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+function updateUpCount() {
+  const n = upItems.filter(x => x.on).length;
+  const b = $('#upSave');
+  b.textContent = n ? `บันทึก ${n} รายการ` : 'เลือกอย่างน้อย 1 รายการ';
+  b.disabled = !n;
+}
+async function saveUpload() {
+  const sel = upItems.filter(x => x.on).map(x => {
+    const p = normProduct(x.p);
+    if (!p.label || p.label === p.id) p.label = cut(p.name, 45);
+    return p;
+  });
+  if (!sel.length) return;
+  const b = $('#upSave');
+  b.disabled = true; b.textContent = 'กำลังบันทึก…';
+  const {error} = await sb.from('caption_products').upsert(sel.map(p => ({id: p.id, data: p})));
+  if (error) { toast('บันทึกไม่สำเร็จ: ' + friendly(error)); updateUpCount(); return; }
+  try { await loadProducts(); } catch (e) { toast(friendly(e)); }
+  $('#upCard').hidden = true; upItems = [];
+  $('#pSearch').value = '';
+  selectProduct(sel[0].id); renderSelect(); render();
+  toast(`บันทึกสินค้า ${sel.length} รายการแล้ว ทุกคนในทีมเห็นแล้ว`);
+}
+
+/* ---------- ผูกเหตุการณ์ ---------- */
+for (const k of PFIELDS) $('#f-' + k).addEventListener('input', productChanged);
+$('#f-group').addEventListener('change', productChanged);
+for (const k of POSTFIELDS) $('#f-' + k).addEventListener('input', changed);
+for (const k of SHOPFIELDS) $('#f-' + k).addEventListener(k === 'cta' ? 'change' : 'input', () => { saveShopSoon(); changed(); });
+$('#f-linkIn').addEventListener('change', () => { saveShopSoon(); changed(); });
+$('#f-group').innerHTML = GROUP_ORDER.map(g => `<option>${esc(g)}</option>`).join('');
+
+$('#pSearch').addEventListener('input', () => {
+  renderSelect();
+  const v = $('#pSelect').value;
+  if (v && v !== pid) { selectProduct(v); render(); }
+});
+$('#pSelect').addEventListener('change', e => { if (e.target.value) { selectProduct(e.target.value); render(); } });
+$('#vtypes').addEventListener('click', e => {
+  const b = e.target.closest('button[data-v]');
+  if (!b) return;
+  opts.vtype = b.dataset.v;
+  syncSeg(); saveUi(); changed();
+});
+$$('.seg[data-opt]').forEach(s => s.addEventListener('click', e => {
+  const b = e.target.closest('button[data-v]');
+  if (!b) return;
+  opts[s.dataset.opt] = b.dataset.v;
+  syncSeg(); saveUi(); changed();
+}));
+$$('.tabs button').forEach(b => b.addEventListener('click', () => {
+  state.tab = b.dataset.tab;
+  syncSeg();
+  $('#cap').value = state.out[state.tab];
+  updateCaptionMeta(); saveUi();
+}));
+$('#cap').addEventListener('input', () => {
+  state.out[state.tab] = $('#cap').value;
+  if (!state.dirty[state.tab]) { state.dirty[state.tab] = true; state.src[state.tab] = 'edit'; }
+  updateCaptionMeta();
+});
+$('#resetBtn').addEventListener('click', () => {
+  state.dirty[state.tab] = false; state.src[state.tab] = 'tpl';
+  render(); toast('สร้างใหม่จากข้อมูลสินค้าแล้ว');
+});
+$('#shuffleBtn').addEventListener('click', () => {
+  seed++;
+  render();
+  toast(state.dirty[state.tab] ? 'ฉบับนี้แก้เองอยู่ กด "สร้างใหม่จากข้อมูลสินค้า" ก่อน' : 'เปลี่ยนสำนวนแล้ว');
+});
+$('#addFaq').addEventListener('click', () => {
+  faqs.push({q: '', a: ''});
+  renderFaqs();
+  const q = $(`#faq-q-${faqs.length - 1}`); if (q) q.focus();
+});
+$('#editBtn').addEventListener('click', () => {
+  const ed = $('#editor');
+  ed.open = true;
+  ed.scrollIntoView({behavior: 'smooth', block: 'start'});
+});
+$('#newBtn').addEventListener('click', async e => {
+  const btn = e.currentTarget;
+  btn.disabled = true;
+  const id = 'p-' + Date.now().toString(36);
+  const p = normProduct({id, label: 'สินค้าใหม่', brand: 'BLISSTECH', group: 'สินค้าอื่น ๆ', warranty: 'รับประกัน 2 ปี เสียไม่ซ่อม เปลี่ยนใหม่ทันที'});
+  const {error} = await sb.from('caption_products').insert({id, data: p});
+  btn.disabled = false;
+  if (error) { toast('เพิ่มสินค้าไม่สำเร็จ: ' + friendly(error)); return; }
+  PRODUCTS.push(p); meta[id] = {at: new Date().toISOString(), by: user && user.email};
+  $('#pSearch').value = '';
+  selectProduct(id); renderSelect(); render();
+  $('#editor').open = true;
+  $('#f-name').focus();
+  toast('เพิ่มสินค้าใหม่แล้ว กรอกชื่อและคีย์เวิร์ดได้เลย');
+});
+$('#delProduct').addEventListener('click', e => twoTap(e.currentTarget, 'กดอีกครั้งเพื่อลบจากระบบ', async () => {
+  clearTimeout(pSaveT); pSaveT = 0;
+  const id = pid;
+  const {error} = await sb.from('caption_products').delete().eq('id', id);
+  if (error) { toast('ลบไม่สำเร็จ: ' + friendly(error)); return; }
+  PRODUCTS = PRODUCTS.filter(p => p.id !== id);
+  pid = '';
+  $('#pSearch').value = '';
+  renderSelect();
+  const first = $('#pSelect').value || (PRODUCTS[0] && PRODUCTS[0].id);
+  if (first) selectProduct(first); else renderSummary();
+  render();
+  toast('ลบสินค้าออกจากระบบแล้ว');
+}));
+$('#refreshBtn').addEventListener('click', () => refresh(false));
+$('#upBtn').addEventListener('click', () => $('#upFile').click());
+$('#upFile').addEventListener('change', async e => {
+  const f = e.target.files[0];
+  e.target.value = '';
+  if (!f) return;
+  try {
+    const list = /\.json$/i.test(f.name) ? parseJson(await f.text()) : parseExcel(await f.arrayBuffer());
+    showUpload(f.name, list);
+  } catch (err) { toast('อ่านไฟล์ไม่ได้: ' + (err && err.message || err)); }
+});
+$('#upList').addEventListener('input', e => {
+  const row = e.target.closest('.up-row'); if (!row) return;
+  const x = upItems[+row.dataset.i];
+  if (e.target.type === 'checkbox') { x.on = e.target.checked; row.classList.toggle('off', !x.on); updateUpCount(); return; }
+  const k = e.target.dataset.k;
+  if (k) { x.p[k] = e.target.value.trim(); if (k === 'name') x.p.label = cut(x.p.name, 45); }
+});
+$('#upCancel').addEventListener('click', () => { $('#upCard').hidden = true; upItems = []; });
+$('#upSave').addEventListener('click', saveUpload);
+$('#mGo').addEventListener('click', () => $('#outCol').scrollIntoView({behavior: 'smooth', block: 'start'}));
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) copy(copySource(b.dataset.copy), b.dataset.copy);
+});
+window.addEventListener('beforeunload', e => {
+  if (pSaveT || sSaveT) { if (pSaveT) flushProduct(); e.preventDefault(); e.returnValue = ''; }
+});
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && user && Date.now() - lastLoad > 120000 && !pSaveT) refresh(true);
+});
+
+/* ---------- เข้าสู่ระบบ / เริ่มต้น ---------- */
+function show(view) {
+  $('#setupView').hidden = view !== 'setup';
+  $('#loginView').hidden = view !== 'login';
+  $('#appView').hidden = view !== 'app';
+}
+async function refresh(quiet) {
+  if (pSaveT) await flushProduct();
+  const before = pid && meta[pid] ? meta[pid].at : '';
+  try { await loadProducts(); } catch (e) { toast(friendly(e)); return; }
+  renderSelect();
+  if (pid && findP(pid)) { if (meta[pid] && meta[pid].at !== before) selectProduct(pid, {keepPost: true}); }
+  else if ($('#pSelect').value) selectProduct($('#pSelect').value);
+  renderSummary(); render();
+  if (!quiet) toast(`โหลดสินค้าล่าสุดแล้ว ${PRODUCTS.length} รายการ`);
+}
+async function enter(u) {
+  // ต้องมีอีเมลอยู่ในตาราง caption_staff ถึงจะใช้ระบบได้
+  const {data: staff, error: staffErr} = await sb.from('caption_staff').select('email').maybeSingle();
+  if (staffErr || !staff) {
+    await sb.auth.signOut();
+    show('login');
+    $('#lgErr').textContent = staffErr ? 'ตรวจสิทธิ์ไม่สำเร็จ: ' + friendly(staffErr)
+      : `บัญชี ${u.email || ''} ยังไม่มีสิทธิ์ใช้ระบบแคปชั่น ให้แอดมินเพิ่มอีเมลนี้ในตาราง caption_staff`;
+    return;
+  }
+  user = u;
+  $('#whoami').textContent = u.email || '';
+  show('app');
+  try { await Promise.all([loadProducts(), loadShop()]); }
+  catch (e) { toast('โหลดข้อมูลไม่สำเร็จ: ' + friendly(e)); }
+  applyShop();
+  const ui = store.get(K_UI, {});
+  Object.assign(opts, {tone: ui.tone || 'casual', ending: ui.ending || '', emoji: ui.emoji || 'on', vtype: ui.vtype || 'review'});
+  if (VARIANTS.includes(ui.tab)) state.tab = ui.tab;
+  renderSelect();
+  const startId = ui.pid && findP(ui.pid) ? ui.pid : $('#pSelect').value;
+  if (startId) selectProduct(startId); else renderSummary();
+  renderSelect();
+  syncSeg();
+  render();
+}
+$('#loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const email = $('#lgEmail').value.trim(), password = $('#lgPass').value;
+  if (!email || !password) { $('#lgErr').textContent = 'กรอกอีเมลและรหัสผ่าน'; return; }
+  const b = $('#lgBtn');
+  b.disabled = true; b.textContent = 'กำลังเข้าสู่ระบบ…'; $('#lgErr').textContent = '';
+  const {data, error} = await sb.auth.signInWithPassword({email, password});
+  b.disabled = false; b.textContent = 'เข้าสู่ระบบ';
+  if (error) {
+    const m = error.message || '';
+    $('#lgErr').textContent = /invalid login/i.test(m) ? 'อีเมลหรือรหัสผ่านไม่ถูกต้อง'
+      : /not confirmed/i.test(m) ? 'บัญชีนี้ยังไม่ได้ยืนยัน ให้แอดมินเปิด Auto Confirm ตอนสร้างผู้ใช้'
+      : friendly(error);
+    return;
+  }
+  $('#lgPass').value = '';
+  enter(data.user);
+});
+$('#logoutBtn').addEventListener('click', async () => {
+  if (pSaveT) await flushProduct();
+  await sb.auth.signOut();
+  user = null; PRODUCTS = []; pid = '';
+  show('login');
+});
+
+(async function boot() {
+  const url = String(CFG.supabaseUrl || ''), key = String(CFG.supabaseKey || '');
+  if (!/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(url) || key.length < 20) { show('setup'); return; }
+  if (!window.supabase) { $('#setupMsg').textContent = 'โหลดตัวเชื่อม Supabase ไม่สำเร็จ ตรวจอินเทอร์เน็ตแล้วรีเฟรชหน้า'; show('setup'); return; }
+  sb = window.supabase.createClient(url, key);
+  sb.auth.onAuthStateChange((event) => { if (event === 'SIGNED_OUT' && user) { user = null; show('login'); } });
+  const {data} = await sb.auth.getSession();
+  if (data && data.session) enter(data.session.user); else show('login');
+})();
+})();
+</script>
+</body>
+</html>
