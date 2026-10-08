@@ -4,4 +4,6 @@
 window.CAPTION_CONFIG = {
   supabaseUrl: 'https://pgqyhgcqygpcaacsfuhs.supabase.co',
   supabaseKey: 'sb_publishable_rWLx7W5daJt5KkieUnZNqA_R2Fsvj2a',
+  // บัญชีทีมที่ใช้ร่วมกัน: หน้าเว็บให้ใส่แค่รหัสทีม (รหัสผ่านของบัญชีนี้)
+  teamEmail: 'caption-team@example.com',
 };
